@@ -1,0 +1,1251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: tetris.c ÏÜåÏä§ ÌååÏùº</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Îã§ÏùåÏóê ÏùòÌï¥ ÏÉùÏÑ±Îê® :  Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Í≤ÄÏÉâ');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Í≤ÄÏÉâ');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('tetris_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">tetris.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="tetris_8c.html">Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include&lt;avr/io.h&gt;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include&lt;util/delay.h&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include&lt;avr/interrupt.h&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dot__matrix_8h.html">dot_matrix.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="tetris_8c.html#abca4bf3dca1f8f7a997b8c0ccacbb963">    7</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#abca4bf3dca1f8f7a997b8c0ccacbb963">_timer_flag</a>;</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">    8</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a62e5b0cab34a72f7aae4310d6000abed">count</a>, <a class="code" href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">pad_count</a>;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="tetris_8c.html#a62237d5bb1265d8dd6194b6d482c7dcf">    9</a></span>&#160;<a class="code" href="struct__dot__matrix.html">dot_matrix</a> * <a class="code" href="tetris_8c.html#a62237d5bb1265d8dd6194b6d482c7dcf">dP</a>;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="tetris_8c.html#a437ef08681e7210d6678427030446a54">   12</a></span>&#160;<span class="preprocessor">#define LEFT 75 //¡¬∑Œ ¿Ãµø    //≈∞∫∏µÂ∞™µÈ </span></div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="tetris_8c.html#a80fb826a684cf3f0d306b22aa100ddac">   13</a></span>&#160;<span class="preprocessor">#define RIGHT 77 //øÏ∑Œ ¿Ãµø </span></div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="tetris_8c.html#a1965eaca47dbf3f87acdafc2208f04eb">   14</a></span>&#160;<span class="preprocessor">#define UP 72 //»∏¿¸ </span></div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="tetris_8c.html#a4193cd1c8c2e6ebd0e056fa2364a663f">   15</a></span>&#160;<span class="preprocessor">#define DOWN 80 //soft drop</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="tetris_8c.html#a8661ce774b9fc30c647d1bf4ccec7a14">   18</a></span>&#160;<span class="preprocessor">#define PAD_SENSITIVITY     30</span></div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">   19</a></span>&#160;<span class="preprocessor">#define PAD_X                0</span></div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="tetris_8c.html#a5fb02b736c0c917dc78a96516bf2aac2">   20</a></span>&#160;<span class="preprocessor">#define PAD_Y                1</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">   23</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[7][4] =</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   { 0x6600, 0x6600, 0x6600, 0x6600 },    <span class="comment">// O</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   { 0xF000, 0x4444, 0xF000, 0x4444 },    <span class="comment">// I</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   { 0x6C00, 0x8C40, 0x6C00, 0x8C40 },    <span class="comment">// S</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   { 0xC600, 0x4C80, 0xC600, 0x4C80 },    <span class="comment">// Z</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   { 0xE400, 0x8C80, 0x4E00, 0x4C40 },    <span class="comment">// T</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   { 0x2E00, 0xC440, 0xE800, 0x88C0 },    <span class="comment">// L</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   { 0x8E00, 0x44C0, 0xE200, 0xC880 },    <span class="comment">// J</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">   35</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>;                  <span class="comment">// ≈◊∆Æ∏ÆπÃ≥ÎΩ∫¿« 7∞°¡ˆ ∏æÁ unsigned char pattern;                 // ≈◊∆Æ∏ÆπÃ≥ÎΩ∫¿« 4∞°¡ˆ ∆–≈œ
+unsigned char cur_line;               // ≈◊∆Æ∏Æ¥œ≥ÎΩ∫¿« «ˆ¿Á ∂Û¿Œ
+unsigned char cur_col;                // ≈◊∆Æ∏Æ¥œ≥ÎΩ∫¿« «ˆ¿Á ƒ≠ 
+unsigned short temp_line[4];
+unsigned short game_board[17];
+unsigned char red[16];
+unsigned char green[16];
+
+unsigned char level = 1;
+unsigned char Collision_flag = 1;
+
+unsigned int adc[2];               //adc ∫Ø»Ø∞™ ¿˙¿Â«œ¥¬ πËø≠
+unsigned char mux = 0;             //adc ∆˜∆Æ
+unsigned char delay = 250;
+unsigned char remove_count = 0;
+unsigned char end_flag = 0;
+
+
+signed char Collision(void)//√Êµπ∆«¥‹
+{
+   if (((game_board[cur_line] &amp; temp_line[0]) != 0) | ((game_board[cur_line + 1] &amp; temp_line[1]) != 0) |
+      ((game_board[cur_line + 2] &amp; temp_line[2]) != 0) | ((game_board[cur_line + 3] &amp; temp_line[3]) != 0))
+      return -1;         // √Êµπ
+   else
+      return 0;  // √Êµπ æ¯¿Ω
+}
+
+void drop()
+{
+   cur_line++;
+
+   if (Collision() == -1)
+   {
+      cur_line--;
+      game_board[cur_line] = game_board[cur_line] | temp_line[0];
+      game_board[cur_line + 1] = game_board[cur_line + 1] | temp_line[1];
+      game_board[cur_line + 2] = game_board[cur_line + 2] | temp_line[2];
+      game_board[cur_line + 3] = game_board[cur_line + 3] | temp_line[3];
+
+      Collision_flag = 1;
+   }
+}
+
+void draw()
+{
+   int i;
+   for (i = 0; i &lt; 16; i++)
+   {
+      red[i] = 0x00;
+      green[i] = game_board[i] &gt;&gt; 4;
+   }
+
+   red[cur_line] = red[cur_line] | (temp_line[0] &gt;&gt; 4);
+   red[cur_line + 1] = red[cur_line + 1] | (temp_line[1] &gt;&gt; 4);
+   red[cur_line + 2] = red[cur_line + 2] | (temp_line[2] &gt;&gt; 4);
+   red[cur_line + 3] = red[cur_line + 3] | (temp_line[3] &gt;&gt; 4);
+}
+
+
+void NewTetriminos(void)
+{
+
+   shape = rand() % 7;
+   //   shape = (count % 7);
+   //   shape = (ADC%7);
+   pattern = 0;
+
+   temp_line[0] = (tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 6;
+   temp_line[1] = (tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 2;
+   temp_line[2] = (tetriminos[shape][pattern] &amp; 0x00F0) &lt;&lt; 2;
+   temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; 6;
+
+   cur_line = 0;                 // ≈◊∆Æ∏ÆπÃ≥ÎΩ∫ «ˆ¿Á ∂Û¿Œ (√÷ªÛ¿ß ∂Û¿Œ)
+   cur_col = 9;
+   Collision_flag = 0;
+
+   if (Collision() == -1)
+      end_flag = 1;
+}
+
+void spin()
+{
+   pattern++;
+   if (pattern == 4)
+      pattern = 0;
+
+   temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+   temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+   temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+   temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+
+   if (Collision() == -1)
+   {
+      pattern--;
+      temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+      temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+      temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+      temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+   }
+}
+
+
+void move(int n)
+{
+   switch (n) {
+   case 0:
+      break;
+   case LEFT: //øﬁ¬ ≈∞ ¥≠∑∂¿ª∂ß 
+
+      cur_col++;
+      temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+      temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+      temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+      temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+
+      if (Collision() == -1)
+      {
+         cur_col--;
+         temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+         temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+         temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+         temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+      }
+
+      break;                     //øﬁ¬ ¿∏∑Œ ∞• ºˆ ¿÷¥¬¡ˆ √º≈© »ƒ ∞°¥…«œ∏È ¿Ãµø
+   case RIGHT: //ø¿∏•¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß- ¿ßøÕ µø¿œ«œ∞‘ √≥∏Æµ  
+      cur_col--;
+      temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+      temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+      temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+      temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+
+      if (Collision() == -1)
+      {
+         cur_col++;
+         temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+         temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+         temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+         temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+      }
+      break;
+   case DOWN: //æ∆∑°¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß-¿ßøÕ µø¿œ«œ∞‘ √≥∏Æµ  
+            //      delay = 0;
+      break;
+   case UP: //¿ß¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß 
+      spin();
+      break;
+      //»∏¿¸«“ ºˆ ¿÷¥¬¡ˆ √º≈© »ƒ ∞°¥…«œ∏È »∏¿¸
+   }
+
+}
+
+void remove()
+{
+   int i, j = 0;
+   for (i = 0; i &lt; 16; i++)
+   {
+      if (game_board[i] == 0x7FFE)
+      {
+         remove_count++;
+         for (j = i; j &gt; 0; j--)
+         {
+            game_board[j] = game_board[j - 1];
+            
+         }
+      }
+   }
+   if (remove_count == 5){
+      level++;
+      speed(level);
+      remove_count = 0;}
+}
+
+void speed(unsigned char level)
+{
+   switch (level)
+   {
+   case 1:
+      delay = 250;
+      break;
+   case 2:
+      delay = 200;
+      break;
+   case 3:
+      delay = 150;
+      break;
+   case 4:
+      delay = 100;
+      break;
+   case 5:
+      delay = 50;
+      break;
+   case 6:
+      end_flag = 1;
+   }
+}
+
+int main()
+{
+   DDRB = 0xff;
+   DDRC = 0xff;
+   PORTB = 0x00;
+   PORTC = 0x00;
+   int i = 0;
+
+   for (i = 0; i &lt; 20; i++)
+      game_board[i] = 0x700E;   // 0111000000001110
+
+   game_board[16] = 0xFFFF;
+   dot_matrix dot_show;         //µµ∆Æ ∏≈∆Æ∏ØΩ∫ ±∏¡∂√º º±æ
+
+   dot_show.row = Dot_portSet(&amp;PORTB, 0);       //«‡ ∆˜∆Æ, Ω√¿€ «…π¯»£ º≥¡§
+   dot_show.col = Dot_portSet(&amp;PORTC, 0);       //ø≠ ∆˜∆Æ, Ω√¿€ «…π¯»£ º≥¡§
+   dot_show.greenPtr.all = green;               //√ ∑œªˆ √‚∑¬«“ πËø≠ µ•¿Ã≈Õ º≥¡§
+   dot_show.redPtr.all = red;                   //ª°∞£ªˆ √‚∑¬«“ πËø≠ µ•¿Ã≈Õ º≥¡§
+   Dot_init(&amp;dot_show);                         //µµ∆Æ∏≈∆Æ∏ØΩ∫ √ ±‚»≠
+
+    //¿Œ≈Õ∑¥∆Æ º¬∆√
+   EIMSK = 0x03;
+   EICRA = 0b0000001010;
+
+    //ADC(Pad) ∆˜∆Æ √ ±‚»≠
+   ADMUX = 0x40;
+   ADCSRA = 0b11101111;
+
+    //≈∏¿Ã∏” √ ±‚»≠
+   TIMSK = 1;
+   TCCR0 = 6;
+   TCNT0 = 6;
+   SREG = 0x80;
+
+    //∑£¥˝ Ω√µÂ ª˝º∫
+   _delay_ms(5);
+   srand(ADC);
+   while (1)
+   {
+      if (Collision_flag == 1)
+         NewTetriminos();
+
+      if (end_flag == 1)
+      {
+         Dot_disp(OFF);
+         break;
+      }
+
+
+      draw();
+      Dot_disp(ALL);
+      remove();
+   }
+}
+
+ISR(INT0_vect)
+{
+   spin();
+}
+
+ISR(TIMER0_OVF_vect) {
+   count++;
+   pad_count++;
+   TCNT0 = 6;
+   if (pad_count == PAD_SENSITIVITY)
+   {
+      if (adc[0]&gt;500)   //øﬁ¬ 
+      {
+         move(LEFT);
+         //pad_value = LEFT;
+      }
+      else if (adc[0]&lt;300)  //ø¿∏•¬ 
+      {
+         move(RIGHT);
+      }
+      if (adc[1]&lt;300)       //æ∆∑°
+         delay = 30;
+      //   else if(adc[1]&gt;500)
+      //      move(UP);
+      else
+         speed(level);
+      pad_count = 0;
+   }
+   if (count == delay) {
+      drop();
+      count = 0;
+   }
+}
+
+
+ISR(ADC_vect)
+{
+   if (mux == PAD_X)
+   {
+      adc[PAD_X] = ADC;
+      ADMUX = 0x40 | PAD_Y;
+      mux = PAD_Y;
+   }
+   else
+   {
+      adc[PAD_Y] = ADC;
+      ADMUX = 0x40 | PAD_X;
+      mux = PAD_X;
+   }
+
+}
+</span></div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">   36</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>;                 <span class="comment">// ≈◊∆Æ∏ÆπÃ≥ÎΩ∫¿« 4∞°¡ˆ ∆–≈œ</span></div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">   37</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>;               <span class="comment">// ≈◊∆Æ∏Æ¥œ≥ÎΩ∫¿« «ˆ¿Á ∂Û¿Œ unsigned char cur_col;                // ≈◊∆Æ∏Æ¥œ≥ÎΩ∫¿« «ˆ¿Á ƒ≠ 
+unsigned short temp_line[4];
+unsigned short game_board[17];
+unsigned char red[16];
+unsigned char green[16];
+
+unsigned char level = 1;
+unsigned char Collision_flag = 1;
+
+unsigned int adc[2];               //adc ∫Ø»Ø∞™ ¿˙¿Â«œ¥¬ πËø≠
+unsigned char mux = 0;             //adc ∆˜∆Æ
+unsigned char delay = 250;
+unsigned char remove_count = 0;
+unsigned char end_flag = 0;
+
+
+signed char Collision(void)//√Êµπ∆«¥‹
+{
+   if (((game_board[cur_line] &amp; temp_line[0]) != 0) | ((game_board[cur_line + 1] &amp; temp_line[1]) != 0) |
+      ((game_board[cur_line + 2] &amp; temp_line[2]) != 0) | ((game_board[cur_line + 3] &amp; temp_line[3]) != 0))
+      return -1;         // √Êµπ
+   else
+      return 0;  // √Êµπ æ¯¿Ω
+}
+
+void drop()
+{
+   cur_line++;
+
+   if (Collision() == -1)
+   {
+      cur_line--;
+      game_board[cur_line] = game_board[cur_line] | temp_line[0];
+      game_board[cur_line + 1] = game_board[cur_line + 1] | temp_line[1];
+      game_board[cur_line + 2] = game_board[cur_line + 2] | temp_line[2];
+      game_board[cur_line + 3] = game_board[cur_line + 3] | temp_line[3];
+
+      Collision_flag = 1;
+   }
+}
+
+void draw()
+{
+   int i;
+   for (i = 0; i &lt; 16; i++)
+   {
+      red[i] = 0x00;
+      green[i] = game_board[i] &gt;&gt; 4;
+   }
+
+   red[cur_line] = red[cur_line] | (temp_line[0] &gt;&gt; 4);
+   red[cur_line + 1] = red[cur_line + 1] | (temp_line[1] &gt;&gt; 4);
+   red[cur_line + 2] = red[cur_line + 2] | (temp_line[2] &gt;&gt; 4);
+   red[cur_line + 3] = red[cur_line + 3] | (temp_line[3] &gt;&gt; 4);
+}
+
+
+void NewTetriminos(void)
+{
+
+   shape = rand() % 7;
+   //   shape = (count % 7);
+   //   shape = (ADC%7);
+   pattern = 0;
+
+   temp_line[0] = (tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 6;
+   temp_line[1] = (tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 2;
+   temp_line[2] = (tetriminos[shape][pattern] &amp; 0x00F0) &lt;&lt; 2;
+   temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; 6;
+
+   cur_line = 0;                 // ≈◊∆Æ∏ÆπÃ≥ÎΩ∫ «ˆ¿Á ∂Û¿Œ (√÷ªÛ¿ß ∂Û¿Œ)
+   cur_col = 9;
+   Collision_flag = 0;
+
+   if (Collision() == -1)
+      end_flag = 1;
+}
+
+void spin()
+{
+   pattern++;
+   if (pattern == 4)
+      pattern = 0;
+
+   temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+   temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+   temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+   temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+
+   if (Collision() == -1)
+   {
+      pattern--;
+      temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+      temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+      temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+      temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+   }
+}
+
+
+void move(int n)
+{
+   switch (n) {
+   case 0:
+      break;
+   case LEFT: //øﬁ¬ ≈∞ ¥≠∑∂¿ª∂ß 
+
+      cur_col++;
+      temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+      temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+      temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+      temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+
+      if (Collision() == -1)
+      {
+         cur_col--;
+         temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+         temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+         temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+         temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+      }
+
+      break;                     //øﬁ¬ ¿∏∑Œ ∞• ºˆ ¿÷¥¬¡ˆ √º≈© »ƒ ∞°¥…«œ∏È ¿Ãµø
+   case RIGHT: //ø¿∏•¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß- ¿ßøÕ µø¿œ«œ∞‘ √≥∏Æµ  
+      cur_col--;
+      temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+      temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+      temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+      temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+
+      if (Collision() == -1)
+      {
+         cur_col++;
+         temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+         temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+         temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+         temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+      }
+      break;
+   case DOWN: //æ∆∑°¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß-¿ßøÕ µø¿œ«œ∞‘ √≥∏Æµ  
+            //      delay = 0;
+      break;
+   case UP: //¿ß¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß 
+      spin();
+      break;
+      //»∏¿¸«“ ºˆ ¿÷¥¬¡ˆ √º≈© »ƒ ∞°¥…«œ∏È »∏¿¸
+   }
+
+}
+
+void remove()
+{
+   int i, j = 0;
+   for (i = 0; i &lt; 16; i++)
+   {
+      if (game_board[i] == 0x7FFE)
+      {
+         remove_count++;
+         for (j = i; j &gt; 0; j--)
+         {
+            game_board[j] = game_board[j - 1];
+            
+         }
+      }
+   }
+   if (remove_count == 5){
+      level++;
+      speed(level);
+      remove_count = 0;}
+}
+
+void speed(unsigned char level)
+{
+   switch (level)
+   {
+   case 1:
+      delay = 250;
+      break;
+   case 2:
+      delay = 200;
+      break;
+   case 3:
+      delay = 150;
+      break;
+   case 4:
+      delay = 100;
+      break;
+   case 5:
+      delay = 50;
+      break;
+   case 6:
+      end_flag = 1;
+   }
+}
+
+int main()
+{
+   DDRB = 0xff;
+   DDRC = 0xff;
+   PORTB = 0x00;
+   PORTC = 0x00;
+   int i = 0;
+
+   for (i = 0; i &lt; 20; i++)
+      game_board[i] = 0x700E;   // 0111000000001110
+
+   game_board[16] = 0xFFFF;
+   dot_matrix dot_show;         //µµ∆Æ ∏≈∆Æ∏ØΩ∫ ±∏¡∂√º º±æ
+
+   dot_show.row = Dot_portSet(&amp;PORTB, 0);       //«‡ ∆˜∆Æ, Ω√¿€ «…π¯»£ º≥¡§
+   dot_show.col = Dot_portSet(&amp;PORTC, 0);       //ø≠ ∆˜∆Æ, Ω√¿€ «…π¯»£ º≥¡§
+   dot_show.greenPtr.all = green;               //√ ∑œªˆ √‚∑¬«“ πËø≠ µ•¿Ã≈Õ º≥¡§
+   dot_show.redPtr.all = red;                   //ª°∞£ªˆ √‚∑¬«“ πËø≠ µ•¿Ã≈Õ º≥¡§
+   Dot_init(&amp;dot_show);                         //µµ∆Æ∏≈∆Æ∏ØΩ∫ √ ±‚»≠
+
+    //¿Œ≈Õ∑¥∆Æ º¬∆√
+   EIMSK = 0x03;
+   EICRA = 0b0000001010;
+
+    //ADC(Pad) ∆˜∆Æ √ ±‚»≠
+   ADMUX = 0x40;
+   ADCSRA = 0b11101111;
+
+    //≈∏¿Ã∏” √ ±‚»≠
+   TIMSK = 1;
+   TCCR0 = 6;
+   TCNT0 = 6;
+   SREG = 0x80;
+
+    //∑£¥˝ Ω√µÂ ª˝º∫
+   _delay_ms(5);
+   srand(ADC);
+   while (1)
+   {
+      if (Collision_flag == 1)
+         NewTetriminos();
+
+      if (end_flag == 1)
+      {
+         Dot_disp(OFF);
+         break;
+      }
+
+
+      draw();
+      Dot_disp(ALL);
+      remove();
+   }
+}
+
+ISR(INT0_vect)
+{
+   spin();
+}
+
+ISR(TIMER0_OVF_vect) {
+   count++;
+   pad_count++;
+   TCNT0 = 6;
+   if (pad_count == PAD_SENSITIVITY)
+   {
+      if (adc[0]&gt;500)   //øﬁ¬ 
+      {
+         move(LEFT);
+         //pad_value = LEFT;
+      }
+      else if (adc[0]&lt;300)  //ø¿∏•¬ 
+      {
+         move(RIGHT);
+      }
+      if (adc[1]&lt;300)       //æ∆∑°
+         delay = 30;
+      //   else if(adc[1]&gt;500)
+      //      move(UP);
+      else
+         speed(level);
+      pad_count = 0;
+   }
+   if (count == delay) {
+      drop();
+      count = 0;
+   }
+}
+
+
+ISR(ADC_vect)
+{
+   if (mux == PAD_X)
+   {
+      adc[PAD_X] = ADC;
+      ADMUX = 0x40 | PAD_Y;
+      mux = PAD_Y;
+   }
+   else
+   {
+      adc[PAD_Y] = ADC;
+      ADMUX = 0x40 | PAD_X;
+      mux = PAD_X;
+   }
+
+}
+</span></div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">   38</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a>;                <span class="comment">// ≈◊∆Æ∏Æ¥œ≥ÎΩ∫¿« «ˆ¿Á ƒ≠ </span></div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">   39</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[4];</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">   40</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[17];</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">   41</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[16];</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="tetris_8c.html#ad20ce888354be47960f1fbe60be9b197">   42</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#ad20ce888354be47960f1fbe60be9b197">green</a>[16];</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">   44</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a> = 1;</div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">   45</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a> = 1;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">   47</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[2];               <span class="comment">//adc ∫Ø»Ø∞™ ¿˙¿Â«œ¥¬ πËø≠</span></div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">   48</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">mux</a> = 0;             <span class="comment">//adc ∆˜∆Æ</span></div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">   49</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 250;</div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">   50</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">remove_count</a> = 0;</div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">   51</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a> = 0;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">   54</a></span>&#160;<span class="keywordtype">signed</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>(<span class="keywordtype">void</span>)<span class="comment">//√Êµπ∆«¥‹ {
+   if (((game_board[cur_line] &amp; temp_line[0]) != 0) | ((game_board[cur_line + 1] &amp; temp_line[1]) != 0) |
+      ((game_board[cur_line + 2] &amp; temp_line[2]) != 0) | ((game_board[cur_line + 3] &amp; temp_line[3]) != 0))
+      return -1;         // √Êµπ
+   else
+      return 0;  // √Êµπ æ¯¿Ω
+}
+
+void drop()
+{
+   cur_line++;
+
+   if (Collision() == -1)
+   {
+      cur_line--;
+      game_board[cur_line] = game_board[cur_line] | temp_line[0];
+      game_board[cur_line + 1] = game_board[cur_line + 1] | temp_line[1];
+      game_board[cur_line + 2] = game_board[cur_line + 2] | temp_line[2];
+      game_board[cur_line + 3] = game_board[cur_line + 3] | temp_line[3];
+
+      Collision_flag = 1;
+   }
+}
+
+void draw()
+{
+   int i;
+   for (i = 0; i &lt; 16; i++)
+   {
+      red[i] = 0x00;
+      green[i] = game_board[i] &gt;&gt; 4;
+   }
+
+   red[cur_line] = red[cur_line] | (temp_line[0] &gt;&gt; 4);
+   red[cur_line + 1] = red[cur_line + 1] | (temp_line[1] &gt;&gt; 4);
+   red[cur_line + 2] = red[cur_line + 2] | (temp_line[2] &gt;&gt; 4);
+   red[cur_line + 3] = red[cur_line + 3] | (temp_line[3] &gt;&gt; 4);
+}
+
+
+void NewTetriminos(void)
+{
+
+   shape = rand() % 7;
+   //   shape = (count % 7);
+   //   shape = (ADC%7);
+   pattern = 0;
+
+   temp_line[0] = (tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 6;
+   temp_line[1] = (tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 2;
+   temp_line[2] = (tetriminos[shape][pattern] &amp; 0x00F0) &lt;&lt; 2;
+   temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; 6;
+
+   cur_line = 0;                 // ≈◊∆Æ∏ÆπÃ≥ÎΩ∫ «ˆ¿Á ∂Û¿Œ (√÷ªÛ¿ß ∂Û¿Œ)
+   cur_col = 9;
+   Collision_flag = 0;
+
+   if (Collision() == -1)
+      end_flag = 1;
+}
+
+void spin()
+{
+   pattern++;
+   if (pattern == 4)
+      pattern = 0;
+
+   temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+   temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+   temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+   temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+
+   if (Collision() == -1)
+   {
+      pattern--;
+      temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+      temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+      temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+      temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+   }
+}
+
+
+void move(int n)
+{
+   switch (n) {
+   case 0:
+      break;
+   case LEFT: //øﬁ¬ ≈∞ ¥≠∑∂¿ª∂ß 
+
+      cur_col++;
+      temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+      temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+      temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+      temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+
+      if (Collision() == -1)
+      {
+         cur_col--;
+         temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+         temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+         temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+         temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+      }
+
+      break;                     //øﬁ¬ ¿∏∑Œ ∞• ºˆ ¿÷¥¬¡ˆ √º≈© »ƒ ∞°¥…«œ∏È ¿Ãµø
+   case RIGHT: //ø¿∏•¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß- ¿ßøÕ µø¿œ«œ∞‘ √≥∏Æµ  
+      cur_col--;
+      temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+      temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+      temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+      temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+
+      if (Collision() == -1)
+      {
+         cur_col++;
+         temp_line[0] = ((tetriminos[shape][pattern] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (cur_col - 3);
+         temp_line[1] = ((tetriminos[shape][pattern] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (cur_col - 3);
+         temp_line[2] = ((tetriminos[shape][pattern] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (cur_col - 3);
+         temp_line[3] = (tetriminos[shape][pattern] &amp; 0x000F) &lt;&lt; (cur_col - 3);
+      }
+      break;
+   case DOWN: //æ∆∑°¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß-¿ßøÕ µø¿œ«œ∞‘ √≥∏Æµ  
+            //      delay = 0;
+      break;
+   case UP: //¿ß¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß 
+      spin();
+      break;
+      //»∏¿¸«“ ºˆ ¿÷¥¬¡ˆ √º≈© »ƒ ∞°¥…«œ∏È »∏¿¸
+   }
+
+}
+
+void remove()
+{
+   int i, j = 0;
+   for (i = 0; i &lt; 16; i++)
+   {
+      if (game_board[i] == 0x7FFE)
+      {
+         remove_count++;
+         for (j = i; j &gt; 0; j--)
+         {
+            game_board[j] = game_board[j - 1];
+            
+         }
+      }
+   }
+   if (remove_count == 5){
+      level++;
+      speed(level);
+      remove_count = 0;}
+}
+
+void speed(unsigned char level)
+{
+   switch (level)
+   {
+   case 1:
+      delay = 250;
+      break;
+   case 2:
+      delay = 200;
+      break;
+   case 3:
+      delay = 150;
+      break;
+   case 4:
+      delay = 100;
+      break;
+   case 5:
+      delay = 50;
+      break;
+   case 6:
+      end_flag = 1;
+   }
+}
+
+int main()
+{
+   DDRB = 0xff;
+   DDRC = 0xff;
+   PORTB = 0x00;
+   PORTC = 0x00;
+   int i = 0;
+
+   for (i = 0; i &lt; 20; i++)
+      game_board[i] = 0x700E;   // 0111000000001110
+
+   game_board[16] = 0xFFFF;
+   dot_matrix dot_show;         //µµ∆Æ ∏≈∆Æ∏ØΩ∫ ±∏¡∂√º º±æ
+
+   dot_show.row = Dot_portSet(&amp;PORTB, 0);       //«‡ ∆˜∆Æ, Ω√¿€ «…π¯»£ º≥¡§
+   dot_show.col = Dot_portSet(&amp;PORTC, 0);       //ø≠ ∆˜∆Æ, Ω√¿€ «…π¯»£ º≥¡§
+   dot_show.greenPtr.all = green;               //√ ∑œªˆ √‚∑¬«“ πËø≠ µ•¿Ã≈Õ º≥¡§
+   dot_show.redPtr.all = red;                   //ª°∞£ªˆ √‚∑¬«“ πËø≠ µ•¿Ã≈Õ º≥¡§
+   Dot_init(&amp;dot_show);                         //µµ∆Æ∏≈∆Æ∏ØΩ∫ √ ±‚»≠
+
+    //¿Œ≈Õ∑¥∆Æ º¬∆√
+   EIMSK = 0x03;
+   EICRA = 0b0000001010;
+
+    //ADC(Pad) ∆˜∆Æ √ ±‚»≠
+   ADMUX = 0x40;
+   ADCSRA = 0b11101111;
+
+    //≈∏¿Ã∏” √ ±‚»≠
+   TIMSK = 1;
+   TCCR0 = 6;
+   TCNT0 = 6;
+   SREG = 0x80;
+
+    //∑£¥˝ Ω√µÂ ª˝º∫
+   _delay_ms(5);
+   srand(ADC);
+   while (1)
+   {
+      if (Collision_flag == 1)
+         NewTetriminos();
+
+      if (end_flag == 1)
+      {
+         Dot_disp(OFF);
+         break;
+      }
+
+
+      draw();
+      Dot_disp(ALL);
+      remove();
+   }
+}
+
+ISR(INT0_vect)
+{
+   spin();
+}
+
+ISR(TIMER0_OVF_vect) {
+   count++;
+   pad_count++;
+   TCNT0 = 6;
+   if (pad_count == PAD_SENSITIVITY)
+   {
+      if (adc[0]&gt;500)   //øﬁ¬ 
+      {
+         move(LEFT);
+         //pad_value = LEFT;
+      }
+      else if (adc[0]&lt;300)  //ø¿∏•¬ 
+      {
+         move(RIGHT);
+      }
+      if (adc[1]&lt;300)       //æ∆∑°
+         delay = 30;
+      //   else if(adc[1]&gt;500)
+      //      move(UP);
+      else
+         speed(level);
+      pad_count = 0;
+   }
+   if (count == delay) {
+      drop();
+      count = 0;
+   }
+}
+
+
+ISR(ADC_vect)
+{
+   if (mux == PAD_X)
+   {
+      adc[PAD_X] = ADC;
+      ADMUX = 0x40 | PAD_Y;
+      mux = PAD_Y;
+   }
+   else
+   {
+      adc[PAD_Y] = ADC;
+      ADMUX = 0x40 | PAD_X;
+      mux = PAD_X;
+   }
+
+}
+</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <span class="keywordflow">if</span> (((<a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>] &amp; <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0]) != 0) | ((<a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 1] &amp; temp_line[1]) != 0) |</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      ((<a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 2] &amp; temp_line[2]) != 0) | ((<a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 3] &amp; temp_line[3]) != 0))</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">return</span> -1;         <span class="comment">// √Êµπ</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="keywordflow">else</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keywordflow">return</span> 0;  <span class="comment">// √Êµπ æ¯¿Ω</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="tetris_8c.html#a2f4c2dc71944a7a7a5a272dfce0e8d43">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="tetris_8c.html#a2f4c2dc71944a7a7a5a272dfce0e8d43">drop</a>()</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>++;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>() == -1)</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>--;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>] | <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0];</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 1] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 1] | <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1];</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 2] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 2] | <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2];</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 3] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 3] | <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3];</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <a class="code" href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a> = 1;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;   }</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="tetris_8c.html#a56c5cf8a568cff737ff95520cbe6b405">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="tetris_8c.html#a56c5cf8a568cff737ff95520cbe6b405">draw</a>()</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;   <span class="keywordflow">for</span> (i = 0; i &lt; 16; i++)</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;   {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[i] = 0x00;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <a class="code" href="tetris_8c.html#ad20ce888354be47960f1fbe60be9b197">green</a>[i] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[i] &gt;&gt; 4;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   }</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>] = <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>] | (<a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] &gt;&gt; 4);</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 1] = <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 1] | (<a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] &gt;&gt; 4);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 2] = <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 2] | (<a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] &gt;&gt; 4);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 3] = <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 3] | (<a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] &gt;&gt; 4);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="tetris_8c.html#acc53888f8fafb142cbb1a9fbe33bf957">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="tetris_8c.html#acc53888f8fafb142cbb1a9fbe33bf957">NewTetriminos</a>(<span class="keywordtype">void</span>)</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   <a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a> = rand() % 7;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;   <span class="comment">//   shape = (count % 7);</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   <span class="comment">//   shape = (ADC%7);</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   <a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a> = 0;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 6;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 2;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &lt;&lt; 2;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; 6;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;   <a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> = 0;                 <span class="comment">// ≈◊∆Æ∏ÆπÃ≥ÎΩ∫ «ˆ¿Á ∂Û¿Œ (√÷ªÛ¿ß ∂Û¿Œ)</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;   <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> = 9;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;   <a class="code" href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a> = 0;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>() == -1)</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <a class="code" href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a> = 1;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div><div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="tetris_8c.html#af87828117d0582d0031f563933f97bfd">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="tetris_8c.html#af87828117d0582d0031f563933f97bfd">spin</a>()</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;   <a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>++;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a> == 4)</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a> = 0;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>() == -1)</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;   {</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>--;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;   }</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div><div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="tetris_8c.html#aa9ef6682140bf3f91bf3614b906b21c1">  138</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="tetris_8c.html#aa9ef6682140bf3f91bf3614b906b21c1">move</a>(<span class="keywordtype">int</span> n)</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;   <span class="keywordflow">switch</span> (n) {</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;   <span class="keywordflow">case</span> 0:</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="tetris_8c.html#a437ef08681e7210d6678427030446a54">LEFT</a>: <span class="comment">//øﬁ¬ ≈∞ ¥≠∑∂¿ª∂ß </span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a>++;</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>() == -1)</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      {</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;         <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a>--;</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      }</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordflow">break</span>;                     <span class="comment">//øﬁ¬ ¿∏∑Œ ∞• ºˆ ¿÷¥¬¡ˆ √º≈© »ƒ ∞°¥…«œ∏È ¿Ãµø</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="tetris_8c.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a>: <span class="comment">//ø¿∏•¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß- ¿ßøÕ µø¿œ«œ∞‘ √≥∏Æµ  </span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a>--;</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>() == -1)</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      {</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;         <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a>++;</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      }</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="tetris_8c.html#a4193cd1c8c2e6ebd0e056fa2364a663f">DOWN</a>: <span class="comment">//æ∆∑°¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß-¿ßøÕ µø¿œ«œ∞‘ √≥∏Æµ  </span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="comment">//      delay = 0;</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="tetris_8c.html#a1965eaca47dbf3f87acdafc2208f04eb">UP</a>: <span class="comment">//¿ß¬  πÊ«‚≈∞ ¥≠∑∂¿ª∂ß </span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <a class="code" href="tetris_8c.html#af87828117d0582d0031f563933f97bfd">spin</a>();</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <span class="comment">//»∏¿¸«“ ºˆ ¿÷¥¬¡ˆ √º≈© »ƒ ∞°¥…«œ∏È »∏¿¸</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;   }</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div><div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="tetris_8c.html#a1fcb45e5d2428352eb36b487d1d4eea3">  188</a></span>&#160;<span class="keywordtype">void</span> <span class="keyword">remove</span>()</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;   <span class="keywordtype">int</span> i, j = 0;</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;   <span class="keywordflow">for</span> (i = 0; i &lt; 16; i++)</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;   {</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[i] == 0x7FFE)</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      {</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;         <a class="code" href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">remove_count</a>++;</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;         <span class="keywordflow">for</span> (j = i; j &gt; 0; j--)</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;         {</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[j] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[j - 1];</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            </div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;         }</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      }</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;   }</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">remove_count</a> == 5){</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <a class="code" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a>++;</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <a class="code" href="tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f">speed</a>(<a class="code" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a>);</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <a class="code" href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">remove_count</a> = 0;}</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div><div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f">  209</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f">speed</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a>)</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;   <span class="keywordflow">switch</span> (level)</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;   {</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;   <span class="keywordflow">case</span> 1:</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 250;</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;   <span class="keywordflow">case</span> 2:</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 200;</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;   <span class="keywordflow">case</span> 3:</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 150;</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;   <span class="keywordflow">case</span> 4:</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 100;</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;   <span class="keywordflow">case</span> 5:</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 50;</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;   <span class="keywordflow">case</span> 6:</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      <a class="code" href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a> = 1;</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;   }</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div><div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="tetris_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  233</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="tetris_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;   DDRB = 0xff;</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;   DDRC = 0xff;</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;   PORTB = 0x00;</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;   PORTC = 0x00;</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;   <span class="keywordtype">int</span> i = 0;</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;   <span class="keywordflow">for</span> (i = 0; i &lt; 20; i++)</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[i] = 0x700E;   <span class="comment">// 0111000000001110</span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;   <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[16] = 0xFFFF;</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;   <a class="code" href="struct__dot__matrix.html">dot_matrix</a> dot_show;         <span class="comment">//µµ∆Æ ∏≈∆Æ∏ØΩ∫ ±∏¡∂√º º±æ 
+   dot_show.row = Dot_portSet(&amp;PORTB, 0);       //«‡ ∆˜∆Æ, Ω√¿€ «…π¯»£ º≥¡§
+   dot_show.col = Dot_portSet(&amp;PORTC, 0);       //ø≠ ∆˜∆Æ, Ω√¿€ «…π¯»£ º≥¡§
+   dot_show.greenPtr.all = green;               //√ ∑œªˆ √‚∑¬«“ πËø≠ µ•¿Ã≈Õ º≥¡§
+   dot_show.redPtr.all = red;                   //ª°∞£ªˆ √‚∑¬«“ πËø≠ µ•¿Ã≈Õ º≥¡§
+   Dot_init(&amp;dot_show);                         //µµ∆Æ∏≈∆Æ∏ØΩ∫ √ ±‚»≠
+
+    //¿Œ≈Õ∑¥∆Æ º¬∆√
+   EIMSK = 0x03;
+   EICRA = 0b0000001010;
+
+    //ADC(Pad) ∆˜∆Æ √ ±‚»≠
+   ADMUX = 0x40;
+   ADCSRA = 0b11101111;
+
+    //≈∏¿Ã∏” √ ±‚»≠
+   TIMSK = 1;
+   TCCR0 = 6;
+   TCNT0 = 6;
+   SREG = 0x80;
+
+    //∑£¥˝ Ω√µÂ ª˝º∫
+   _delay_ms(5);
+   srand(ADC);
+   while (1)
+   {
+      if (Collision_flag == 1)
+         NewTetriminos();
+
+      if (end_flag == 1)
+      {
+         Dot_disp(OFF);
+         break;
+      }
+
+
+      draw();
+      Dot_disp(ALL);
+      remove();
+   }
+}
+
+ISR(INT0_vect)
+{
+   spin();
+}
+
+ISR(TIMER0_OVF_vect) {
+   count++;
+   pad_count++;
+   TCNT0 = 6;
+   if (pad_count == PAD_SENSITIVITY)
+   {
+      if (adc[0]&gt;500)   //øﬁ¬ 
+      {
+         move(LEFT);
+         //pad_value = LEFT;
+      }
+      else if (adc[0]&lt;300)  //ø¿∏•¬ 
+      {
+         move(RIGHT);
+      }
+      if (adc[1]&lt;300)       //æ∆∑°
+         delay = 30;
+      //   else if(adc[1]&gt;500)
+      //      move(UP);
+      else
+         speed(level);
+      pad_count = 0;
+   }
+   if (count == delay) {
+      drop();
+      count = 0;
+   }
+}
+
+
+ISR(ADC_vect)
+{
+   if (mux == PAD_X)
+   {
+      adc[PAD_X] = ADC;
+      ADMUX = 0x40 | PAD_Y;
+      mux = PAD_Y;
+   }
+   else
+   {
+      adc[PAD_Y] = ADC;
+      ADMUX = 0x40 | PAD_X;
+      mux = PAD_X;
+   }
+
+}
+</span></div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;   dot_show.<a class="code" href="struct__dot__matrix.html#a549cd7f99fcdc1c15298e7a72ed1833e">row</a> = <a class="code" href="dot__matrix_8c.html#aeb9b4954ea6a435d377cdab117fbac3f">Dot_portSet</a>(&amp;PORTB, 0);       <span class="comment">//«‡ ∆˜∆Æ, Ω√¿€ «…π¯»£ º≥¡§</span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;   dot_show.<a class="code" href="struct__dot__matrix.html#a1ecc29bd3129a1772dc2497b384c71ec">col</a> = <a class="code" href="dot__matrix_8c.html#aeb9b4954ea6a435d377cdab117fbac3f">Dot_portSet</a>(&amp;PORTC, 0);       <span class="comment">//ø≠ ∆˜∆Æ, Ω√¿€ «…π¯»£ º≥¡§</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;   dot_show.<a class="code" href="struct__dot__matrix.html#ae24a27965d4b51bdc8068bc7a445ed68">greenPtr</a>.<a class="code" href="union__matrix__pointer.html#a0e01cbf81d0496d1344177fe4d90c385">all</a> = <a class="code" href="tetris_8c.html#ad20ce888354be47960f1fbe60be9b197">green</a>;               <span class="comment">//√ ∑œªˆ √‚∑¬«“ πËø≠ µ•¿Ã≈Õ º≥¡§</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;   dot_show.<a class="code" href="struct__dot__matrix.html#a1a5469905d186f7dd9479561eb9ae6e2">redPtr</a>.<a class="code" href="union__matrix__pointer.html#a0e01cbf81d0496d1344177fe4d90c385">all</a> = <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>;                   <span class="comment">//ª°∞£ªˆ √‚∑¬«“ πËø≠ µ•¿Ã≈Õ º≥¡§</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;   <a class="code" href="dot__matrix_8c.html#a857f3c97866ae6ab3ce77f2964c0c382">Dot_init</a>(&amp;dot_show);                         <span class="comment">//µµ∆Æ∏≈∆Æ∏ØΩ∫ √ ±‚»≠</span></div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">//¿Œ≈Õ∑¥∆Æ º¬∆√    EIMSK = 0x03;
+   EICRA = 0b0000001010;
+
+    //ADC(Pad) ∆˜∆Æ √ ±‚»≠
+   ADMUX = 0x40;
+   ADCSRA = 0b11101111;
+
+    //≈∏¿Ã∏” √ ±‚»≠
+   TIMSK = 1;
+   TCCR0 = 6;
+   TCNT0 = 6;
+   SREG = 0x80;
+
+    //∑£¥˝ Ω√µÂ ª˝º∫
+   _delay_ms(5);
+   srand(ADC);
+   while (1)
+   {
+      if (Collision_flag == 1)
+         NewTetriminos();
+
+      if (end_flag == 1)
+      {
+         Dot_disp(OFF);
+         break;
+      }
+
+
+      draw();
+      Dot_disp(ALL);
+      remove();
+   }
+}
+
+ISR(INT0_vect)
+{
+   spin();
+}
+
+ISR(TIMER0_OVF_vect) {
+   count++;
+   pad_count++;
+   TCNT0 = 6;
+   if (pad_count == PAD_SENSITIVITY)
+   {
+      if (adc[0]&gt;500)   //øﬁ¬ 
+      {
+         move(LEFT);
+         //pad_value = LEFT;
+      }
+      else if (adc[0]&lt;300)  //ø¿∏•¬ 
+      {
+         move(RIGHT);
+      }
+      if (adc[1]&lt;300)       //æ∆∑°
+         delay = 30;
+      //   else if(adc[1]&gt;500)
+      //      move(UP);
+      else
+         speed(level);
+      pad_count = 0;
+   }
+   if (count == delay) {
+      drop();
+      count = 0;
+   }
+}
+
+
+ISR(ADC_vect)
+{
+   if (mux == PAD_X)
+   {
+      adc[PAD_X] = ADC;
+      ADMUX = 0x40 | PAD_Y;
+      mux = PAD_Y;
+   }
+   else
+   {
+      adc[PAD_Y] = ADC;
+      ADMUX = 0x40 | PAD_X;
+      mux = PAD_X;
+   }
+
+}
+</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;   EIMSK = 0x03;</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;   EICRA = 0b0000001010;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">//ADC(Pad) ∆˜∆Æ √ ±‚»≠</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;   ADMUX = 0x40;</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;   ADCSRA = 0b11101111;</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">//≈∏¿Ã∏” √ ±‚»≠</span></div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;   TIMSK = 1;</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;   TCCR0 = 6;</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;   TCNT0 = 6;</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;   SREG = 0x80;</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="comment">//∑£¥˝ Ω√µÂ ª˝º∫</span></div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;   _delay_ms(5);</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;   srand(ADC);</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;   <span class="keywordflow">while</span> (1)</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;   {</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a> == 1)</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;         <a class="code" href="tetris_8c.html#acc53888f8fafb142cbb1a9fbe33bf957">NewTetriminos</a>();</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a> == 1)</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      {</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;         <a class="code" href="dot__matrix_8c.html#a3b9b4c65b72b422e214de913df281cfe">Dot_disp</a>(<a class="code" href="dot__matrix_8h.html#a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75">OFF</a>);</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;         <span class="keywordflow">break</span>;</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      }</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <a class="code" href="tetris_8c.html#a56c5cf8a568cff737ff95520cbe6b405">draw</a>();</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      <a class="code" href="dot__matrix_8c.html#a3b9b4c65b72b422e214de913df281cfe">Dot_disp</a>(<a class="code" href="dot__matrix_8h.html#a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a">ALL</a>);</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      <span class="keyword">remove</span>();</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;   }</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div><div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="tetris_8c.html#afea150fcd685610cb9f7672fce361e53">  288</a></span>&#160;<a class="code" href="tetris_8c.html#afea150fcd685610cb9f7672fce361e53">ISR</a>(INT0_vect)</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;   <a class="code" href="tetris_8c.html#af87828117d0582d0031f563933f97bfd">spin</a>();</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div><div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="tetris_8c.html#add2d7cdddfb682dcc0391e60cf42c7d6">  293</a></span>&#160;<a class="code" href="tetris_8c.html#afea150fcd685610cb9f7672fce361e53">ISR</a>(TIMER0_OVF_vect) {</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;   <a class="code" href="tetris_8c.html#a62e5b0cab34a72f7aae4310d6000abed">count</a>++;</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;   <a class="code" href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">pad_count</a>++;</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;   TCNT0 = 6;</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">pad_count</a> == <a class="code" href="tetris_8c.html#a8661ce774b9fc30c647d1bf4ccec7a14">PAD_SENSITIVITY</a>)</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;   {</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[0]&gt;500)   <span class="comment">//øﬁ¬        {
+         move(LEFT);
+         //pad_value = LEFT;
+      }
+      else if (adc[0]&lt;300)  //ø¿∏•¬ 
+      {
+         move(RIGHT);
+      }
+      if (adc[1]&lt;300)       //æ∆∑°
+         delay = 30;
+      //   else if(adc[1]&gt;500)
+      //      move(UP);
+      else
+         speed(level);
+      pad_count = 0;
+   }
+   if (count == delay) {
+      drop();
+      count = 0;
+   }
+}
+
+
+ISR(ADC_vect)
+{
+   if (mux == PAD_X)
+   {
+      adc[PAD_X] = ADC;
+      ADMUX = 0x40 | PAD_Y;
+      mux = PAD_Y;
+   }
+   else
+   {
+      adc[PAD_Y] = ADC;
+      ADMUX = 0x40 | PAD_X;
+      mux = PAD_X;
+   }
+
+}
+</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      {</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;         <a class="code" href="tetris_8c.html#aa9ef6682140bf3f91bf3614b906b21c1">move</a>(<a class="code" href="tetris_8c.html#a437ef08681e7210d6678427030446a54">LEFT</a>);</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;         <span class="comment">//pad_value = LEFT;</span></div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      }</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[0]&lt;300)  <span class="comment">//ø¿∏•¬ </span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      {</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;         <a class="code" href="tetris_8c.html#aa9ef6682140bf3f91bf3614b906b21c1">move</a>(<a class="code" href="tetris_8c.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a>);</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      }</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[1]&lt;300)       <span class="comment">//æ∆∑°</span></div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;         <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 30;</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      <span class="comment">//   else if(adc[1]&gt;500)</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      <span class="comment">//      move(UP);</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      <span class="keywordflow">else</span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;         <a class="code" href="tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f">speed</a>(<a class="code" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a>);</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      <a class="code" href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">pad_count</a> = 0;</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;   }</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a62e5b0cab34a72f7aae4310d6000abed">count</a> == <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a>) {</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;      <a class="code" href="tetris_8c.html#a2f4c2dc71944a7a7a5a272dfce0e8d43">drop</a>();</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      <a class="code" href="tetris_8c.html#a62e5b0cab34a72f7aae4310d6000abed">count</a> = 0;</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;   }</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div><div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="tetris_8c.html#a05c2e5b588ced1cd7312f5b0edc5b295">  323</a></span>&#160;<a class="code" href="tetris_8c.html#afea150fcd685610cb9f7672fce361e53">ISR</a>(ADC_vect)</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;{</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">mux</a> == <a class="code" href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a>)</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;   {</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;      <a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[<a class="code" href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a>] = ADC;</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;      ADMUX = 0x40 | <a class="code" href="tetris_8c.html#a5fb02b736c0c917dc78a96516bf2aac2">PAD_Y</a>;</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;      <a class="code" href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">mux</a> = <a class="code" href="tetris_8c.html#a5fb02b736c0c917dc78a96516bf2aac2">PAD_Y</a>;</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;   }</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;   <span class="keywordflow">else</span></div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;   {</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;      <a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[<a class="code" href="tetris_8c.html#a5fb02b736c0c917dc78a96516bf2aac2">PAD_Y</a>] = ADC;</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;      ADMUX = 0x40 | <a class="code" href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a>;</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;      <a class="code" href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">mux</a> = <a class="code" href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a>;</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;   }</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div><div class="ttc" id="struct__dot__matrix_html"><div class="ttname"><a href="struct__dot__matrix.html">_dot_matrix</a></div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00058">dot_matrix.h:58</a></div></div>
+<div class="ttc" id="dot__matrix_8c_html_aeb9b4954ea6a435d377cdab117fbac3f"><div class="ttname"><a href="dot__matrix_8c.html#aeb9b4954ea6a435d377cdab117fbac3f">Dot_portSet</a></div><div class="ttdeci">dot_port Dot_portSet(uint8_t *port, unsigned char pNum)</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8c_source.html#l00056">dot_matrix.c:56</a></div></div>
+<div class="ttc" id="tetris_8c_html_a5fb02b736c0c917dc78a96516bf2aac2"><div class="ttname"><a href="tetris_8c.html#a5fb02b736c0c917dc78a96516bf2aac2">PAD_Y</a></div><div class="ttdeci">#define PAD_Y</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00020">tetris.c:20</a></div></div>
+<div class="ttc" id="tetris_8c_html_a6bf409bee6116cda44d0765f4b6e4ec2"><div class="ttname"><a href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a></div><div class="ttdeci">unsigned char pattern</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00036">tetris.c:36</a></div></div>
+<div class="ttc" id="tetris_8c_html_a71750e3c93ffff30f20f22f036e566ed"><div class="ttname"><a href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a></div><div class="ttdeci">signed char Collision(void)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00054">tetris.c:54</a></div></div>
+<div class="ttc" id="struct__dot__matrix_html_a1a5469905d186f7dd9479561eb9ae6e2"><div class="ttname"><a href="struct__dot__matrix.html#a1a5469905d186f7dd9479561eb9ae6e2">_dot_matrix::redPtr</a></div><div class="ttdeci">matrix_pointer redPtr</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00062">dot_matrix.h:62</a></div></div>
+<div class="ttc" id="dot__matrix_8c_html_a3b9b4c65b72b422e214de913df281cfe"><div class="ttname"><a href="dot__matrix_8c.html#a3b9b4c65b72b422e214de913df281cfe">Dot_disp</a></div><div class="ttdeci">void Dot_disp(disp_state state)</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8c_source.html#l00022">dot_matrix.c:22</a></div></div>
+<div class="ttc" id="tetris_8c_html_aa9ef6682140bf3f91bf3614b906b21c1"><div class="ttname"><a href="tetris_8c.html#aa9ef6682140bf3f91bf3614b906b21c1">move</a></div><div class="ttdeci">void move(int n)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00138">tetris.c:138</a></div></div>
+<div class="ttc" id="tetris_8c_html_a62e5b0cab34a72f7aae4310d6000abed"><div class="ttname"><a href="tetris_8c.html#a62e5b0cab34a72f7aae4310d6000abed">count</a></div><div class="ttdeci">unsigned char count</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00008">tetris.c:8</a></div></div>
+<div class="ttc" id="tetris_8c_html_abb21a2ebcb577edbad932a897afe40e0"><div class="ttname"><a href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a></div><div class="ttdeci">unsigned char cur_line</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00037">tetris.c:37</a></div></div>
+<div class="ttc" id="tetris_8c_html_afea150fcd685610cb9f7672fce361e53"><div class="ttname"><a href="tetris_8c.html#afea150fcd685610cb9f7672fce361e53">ISR</a></div><div class="ttdeci">ISR(INT0_vect)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00288">tetris.c:288</a></div></div>
+<div class="ttc" id="tetris_8c_html_ac61a34f9c340a56962d27c7e3372674d"><div class="ttname"><a href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a></div><div class="ttdeci">unsigned char end_flag</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00051">tetris.c:51</a></div></div>
+<div class="ttc" id="tetris_8c_html_a0d957bf1afecc6bd1ebcb451c7abe11d"><div class="ttname"><a href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a></div><div class="ttdeci">unsigned char level</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00044">tetris.c:44</a></div></div>
+<div class="ttc" id="tetris_8c_html_a6cb39100e17c8153db7d9cfe5999ab17"><div class="ttname"><a href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a></div><div class="ttdeci">unsigned short tetriminos[7][4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00023">tetris.c:23</a></div></div>
+<div class="ttc" id="tetris_8c_html_a9d7f77334f11d266e824cb9b0ec6871e"><div class="ttname"><a href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a></div><div class="ttdeci">unsigned char shape</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00035">tetris.c:35</a></div></div>
+<div class="ttc" id="tetris_8c_html_ad20ce888354be47960f1fbe60be9b197"><div class="ttname"><a href="tetris_8c.html#ad20ce888354be47960f1fbe60be9b197">green</a></div><div class="ttdeci">unsigned char green[16]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00042">tetris.c:42</a></div></div>
+<div class="ttc" id="tetris_8c_html_a44d0e445041ca51a492e04db487a33eb"><div class="ttname"><a href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a></div><div class="ttdeci">unsigned char red[16]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00041">tetris.c:41</a></div></div>
+<div class="ttc" id="tetris_8c_html_ad12852dedfdcba50139ad6ddb53bf54f"><div class="ttname"><a href="tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f">speed</a></div><div class="ttdeci">void speed(unsigned char level)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00209">tetris.c:209</a></div></div>
+<div class="ttc" id="tetris_8c_html_ac782b56188a1f8e4e0ae82fc32ad05ec"><div class="ttname"><a href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">pad_count</a></div><div class="ttdeci">unsigned char pad_count</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00008">tetris.c:8</a></div></div>
+<div class="ttc" id="dot__matrix_8h_html_a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75"><div class="ttname"><a href="dot__matrix_8h.html#a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75">OFF</a></div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00068">dot_matrix.h:68</a></div></div>
+<div class="ttc" id="dot__matrix_8h_html_a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a"><div class="ttname"><a href="dot__matrix_8h.html#a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a">ALL</a></div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00073">dot_matrix.h:73</a></div></div>
+<div class="ttc" id="tetris_8c_html_a4193cd1c8c2e6ebd0e056fa2364a663f"><div class="ttname"><a href="tetris_8c.html#a4193cd1c8c2e6ebd0e056fa2364a663f">DOWN</a></div><div class="ttdeci">#define DOWN</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00015">tetris.c:15</a></div></div>
+<div class="ttc" id="tetris_8c_html_a437ef08681e7210d6678427030446a54"><div class="ttname"><a href="tetris_8c.html#a437ef08681e7210d6678427030446a54">LEFT</a></div><div class="ttdeci">#define LEFT</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00012">tetris.c:12</a></div></div>
+<div class="ttc" id="dot__matrix_8c_html_a857f3c97866ae6ab3ce77f2964c0c382"><div class="ttname"><a href="dot__matrix_8c.html#a857f3c97866ae6ab3ce77f2964c0c382">Dot_init</a></div><div class="ttdeci">void Dot_init(dot_matrix *init)</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8c_source.html#l00016">dot_matrix.c:16</a></div></div>
+<div class="ttc" id="tetris_8c_html_a1965eaca47dbf3f87acdafc2208f04eb"><div class="ttname"><a href="tetris_8c.html#a1965eaca47dbf3f87acdafc2208f04eb">UP</a></div><div class="ttdeci">#define UP</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00014">tetris.c:14</a></div></div>
+<div class="ttc" id="dot__matrix_8h_html"><div class="ttname"><a href="dot__matrix_8h.html">dot_matrix.h</a></div></div>
+<div class="ttc" id="tetris_8c_html_acc53888f8fafb142cbb1a9fbe33bf957"><div class="ttname"><a href="tetris_8c.html#acc53888f8fafb142cbb1a9fbe33bf957">NewTetriminos</a></div><div class="ttdeci">void NewTetriminos(void)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00095">tetris.c:95</a></div></div>
+<div class="ttc" id="struct__dot__matrix_html_a1ecc29bd3129a1772dc2497b384c71ec"><div class="ttname"><a href="struct__dot__matrix.html#a1ecc29bd3129a1772dc2497b384c71ec">_dot_matrix::col</a></div><div class="ttdeci">dot_port col</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00061">dot_matrix.h:61</a></div></div>
+<div class="ttc" id="tetris_8c_html_a97513822cb79bcd590266957cd279292"><div class="ttname"><a href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a></div><div class="ttdeci">unsigned short temp_line[4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00039">tetris.c:39</a></div></div>
+<div class="ttc" id="tetris_8c_html_a30e19b77a300782bfc76ddcc416f926e"><div class="ttname"><a href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">remove_count</a></div><div class="ttdeci">unsigned char remove_count</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00050">tetris.c:50</a></div></div>
+<div class="ttc" id="tetris_8c_html_a62237d5bb1265d8dd6194b6d482c7dcf"><div class="ttname"><a href="tetris_8c.html#a62237d5bb1265d8dd6194b6d482c7dcf">dP</a></div><div class="ttdeci">dot_matrix * dP</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00009">tetris.c:9</a></div></div>
+<div class="ttc" id="union__matrix__pointer_html_a0e01cbf81d0496d1344177fe4d90c385"><div class="ttname"><a href="union__matrix__pointer.html#a0e01cbf81d0496d1344177fe4d90c385">_matrix_pointer::all</a></div><div class="ttdeci">uint8_t * all</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00044">dot_matrix.h:44</a></div></div>
+<div class="ttc" id="tetris_8c_html_abca4bf3dca1f8f7a997b8c0ccacbb963"><div class="ttname"><a href="tetris_8c.html#abca4bf3dca1f8f7a997b8c0ccacbb963">_timer_flag</a></div><div class="ttdeci">unsigned char _timer_flag</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00007">tetris.c:7</a></div></div>
+<div class="ttc" id="tetris_8c_html_a80fb826a684cf3f0d306b22aa100ddac"><div class="ttname"><a href="tetris_8c.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a></div><div class="ttdeci">#define RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00013">tetris.c:13</a></div></div>
+<div class="ttc" id="struct__dot__matrix_html_a549cd7f99fcdc1c15298e7a72ed1833e"><div class="ttname"><a href="struct__dot__matrix.html#a549cd7f99fcdc1c15298e7a72ed1833e">_dot_matrix::row</a></div><div class="ttdeci">dot_port row</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00060">dot_matrix.h:60</a></div></div>
+<div class="ttc" id="tetris_8c_html_a8a99281c65483bd7516835711079ecf1"><div class="ttname"><a href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a></div><div class="ttdeci">unsigned char cur_col</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00038">tetris.c:38</a></div></div>
+<div class="ttc" id="tetris_8c_html_a4fbe54d91d53aabbbcec17706f6570ed"><div class="ttname"><a href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a></div><div class="ttdeci">#define PAD_X</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00019">tetris.c:19</a></div></div>
+<div class="ttc" id="tetris_8c_html_a56c5cf8a568cff737ff95520cbe6b405"><div class="ttname"><a href="tetris_8c.html#a56c5cf8a568cff737ff95520cbe6b405">draw</a></div><div class="ttdeci">void draw()</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00079">tetris.c:79</a></div></div>
+<div class="ttc" id="tetris_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="tetris_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00233">tetris.c:233</a></div></div>
+<div class="ttc" id="struct__dot__matrix_html_ae24a27965d4b51bdc8068bc7a445ed68"><div class="ttname"><a href="struct__dot__matrix.html#ae24a27965d4b51bdc8068bc7a445ed68">_dot_matrix::greenPtr</a></div><div class="ttdeci">matrix_pointer greenPtr</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00063">dot_matrix.h:63</a></div></div>
+<div class="ttc" id="tetris_8c_html_a2f4c2dc71944a7a7a5a272dfce0e8d43"><div class="ttname"><a href="tetris_8c.html#a2f4c2dc71944a7a7a5a272dfce0e8d43">drop</a></div><div class="ttdeci">void drop()</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00063">tetris.c:63</a></div></div>
+<div class="ttc" id="tetris_8c_html_a8661ce774b9fc30c647d1bf4ccec7a14"><div class="ttname"><a href="tetris_8c.html#a8661ce774b9fc30c647d1bf4ccec7a14">PAD_SENSITIVITY</a></div><div class="ttdeci">#define PAD_SENSITIVITY</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00018">tetris.c:18</a></div></div>
+<div class="ttc" id="tetris_8c_html_ab563c4c7faad8b2ba22fb0ded4d02ee1"><div class="ttname"><a href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a></div><div class="ttdeci">unsigned char delay</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00049">tetris.c:49</a></div></div>
+<div class="ttc" id="tetris_8c_html_af87828117d0582d0031f563933f97bfd"><div class="ttname"><a href="tetris_8c.html#af87828117d0582d0031f563933f97bfd">spin</a></div><div class="ttdeci">void spin()</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00116">tetris.c:116</a></div></div>
+<div class="ttc" id="tetris_8c_html_a5e25b037e0c4f44ea80058d66a7529e1"><div class="ttname"><a href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a></div><div class="ttdeci">unsigned char Collision_flag</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00045">tetris.c:45</a></div></div>
+<div class="ttc" id="tetris_8c_html_a20549a7bcd5a019416fd25a3c64fc977"><div class="ttname"><a href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a></div><div class="ttdeci">unsigned short game_board[17]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00040">tetris.c:40</a></div></div>
+<div class="ttc" id="tetris_8c_html_a08c72d06034953df162b5cc6dd0e0360"><div class="ttname"><a href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">mux</a></div><div class="ttdeci">unsigned char mux</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00048">tetris.c:48</a></div></div>
+<div class="ttc" id="tetris_8c_html_a415a47d48605e8663920d695a9a4251a"><div class="ttname"><a href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a></div><div class="ttdeci">unsigned int adc[2]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00047">tetris.c:47</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="tetris_8c.html">tetris.c</a></li>
+    <li class="footer">Îã§ÏùåÏóê ÏùòÌï¥ ÏÉùÏÑ±Îê® : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

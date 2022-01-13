@@ -1,0 +1,115 @@
+\hypertarget{dot__matrix_8c}{}\section{dot\+\_\+matrix.\+c 파일 참조}
+\label{dot__matrix_8c}\index{dot\+\_\+matrix.\+c@{dot\+\_\+matrix.\+c}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}dot\+\_\+matrix.\+h\char`\"{}}\newline
+dot\+\_\+matrix.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{dot__matrix_8c_a857f3c97866ae6ab3ce77f2964c0c382}{Dot\+\_\+init} (\hyperlink{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}{dot\+\_\+matrix} $\ast$init)
+\item 
+void \hyperlink{dot__matrix_8c_a3b9b4c65b72b422e214de913df281cfe}{Dot\+\_\+disp} (\hyperlink{dot__matrix_8h_af0d98cd418df159977228a2fbe6b22b2}{disp\+\_\+state} state)
+\item 
+unsigned char \hyperlink{dot__matrix_8c_a118591df4cb944dd32f883710ac8a2c2}{Dot\+\_\+data} (unsigned char y, unsigned char x)
+\item 
+\hyperlink{dot__matrix_8h_a03f53cc8acae29f160b6cc647fa3db16}{dot\+\_\+port} \hyperlink{dot__matrix_8c_aeb9b4954ea6a435d377cdab117fbac3f}{Dot\+\_\+port\+Set} (uint8\+\_\+t $\ast$port, unsigned char p\+Num)
+\end{DoxyCompactItemize}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{dot__matrix_8c_a118591df4cb944dd32f883710ac8a2c2}\label{dot__matrix_8c_a118591df4cb944dd32f883710ac8a2c2}} 
+\index{dot\+\_\+matrix.\+c@{dot\+\_\+matrix.\+c}!Dot\+\_\+data@{Dot\+\_\+data}}
+\index{Dot\+\_\+data@{Dot\+\_\+data}!dot\+\_\+matrix.\+c@{dot\+\_\+matrix.\+c}}
+\subsubsection{\texorpdfstring{Dot\+\_\+data()}{Dot\_data()}}
+{\footnotesize\ttfamily unsigned char Dot\+\_\+data (\begin{DoxyParamCaption}\item[{unsigned char}]{y,  }\item[{unsigned char}]{x }\end{DoxyParamCaption})}
+
+
+
+dot\+\_\+matrix.\+c 파일의 39 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+40 \{
+41 \textcolor{comment}{//������ �Լ�, ���� �ϳ�, ���ڹ迭 �� �޾ƿ�}
+42     \textcolor{keywordflow}{return} (( *((\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_ae24a27965d4b51bdc8068bc7a445ed68}{greenPtr}).all+y) >> x) & 0x01 ) | (( (*((
+      \hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a1a5469905d186f7dd9479561eb9ae6e2}{redPtr}).all+y) >> x) & 0x01 ) << 1);
+43 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{dot__matrix_8c_a3b9b4c65b72b422e214de913df281cfe}\label{dot__matrix_8c_a3b9b4c65b72b422e214de913df281cfe}} 
+\index{dot\+\_\+matrix.\+c@{dot\+\_\+matrix.\+c}!Dot\+\_\+disp@{Dot\+\_\+disp}}
+\index{Dot\+\_\+disp@{Dot\+\_\+disp}!dot\+\_\+matrix.\+c@{dot\+\_\+matrix.\+c}}
+\subsubsection{\texorpdfstring{Dot\+\_\+disp()}{Dot\_disp()}}
+{\footnotesize\ttfamily void Dot\+\_\+disp (\begin{DoxyParamCaption}\item[{\hyperlink{dot__matrix_8h_af0d98cd418df159977228a2fbe6b22b2}{disp\+\_\+state}}]{state }\end{DoxyParamCaption})}
+
+
+
+dot\+\_\+matrix.\+c 파일의 22 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+23 \{
+24 \textcolor{comment}{//��� �Լ�}
+25     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} i,j;
+26     \textcolor{keywordflow}{for}(i=0;i<\hyperlink{dot__matrix_8h_a9a0eb1b24ffece5f2dda481e0dc85aed}{DOT\_COL\_SIZE};i++)
+27     \{
+28         \textcolor{keywordflow}{for}(j=0;j<\hyperlink{dot__matrix_8h_adb85e115dbb163a04221eed5e666b490}{DOT\_ROW\_SIZE};j++)
+29         \{
+30             *(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.\hyperlink{struct__dot__port_adfcfd7f304a337776b36f479221f197c}{port}) = ((\hyperlink{dot__matrix_8c_a118591df4cb944dd32f883710ac8a2c2}{Dot\_data}(i,j)&state)<<(
+      \hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.\hyperlink{struct__dot__port_a96ed4cdf432ec894de51f1c6246bdb29}{portNum}));
+31             \hyperlink{dot__matrix_8h_a13666af55c99ab3d43502dbc0a31abe9}{SCK\_PULSE}
+32         \}
+33         \_delay\_ms(5);
+34         \hyperlink{dot__matrix_8h_aecec6fe7d564b668c982384e80872d7e}{RCK\_PULSE}
+35         *(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a1ecc29bd3129a1772dc2497b384c71ec}{col}.\hyperlink{struct__dot__port_adfcfd7f304a337776b36f479221f197c}{port}) = (i<<(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a1ecc29bd3129a1772dc2497b384c71ec}{col}.\hyperlink{struct__dot__port_a96ed4cdf432ec894de51f1c6246bdb29}{portNum}));
+36     \}
+37 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{dot__matrix_8c_a857f3c97866ae6ab3ce77f2964c0c382}\label{dot__matrix_8c_a857f3c97866ae6ab3ce77f2964c0c382}} 
+\index{dot\+\_\+matrix.\+c@{dot\+\_\+matrix.\+c}!Dot\+\_\+init@{Dot\+\_\+init}}
+\index{Dot\+\_\+init@{Dot\+\_\+init}!dot\+\_\+matrix.\+c@{dot\+\_\+matrix.\+c}}
+\subsubsection{\texorpdfstring{Dot\+\_\+init()}{Dot\_init()}}
+{\footnotesize\ttfamily void Dot\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}{dot\+\_\+matrix} $\ast$}]{init }\end{DoxyParamCaption})}
+
+
+
+dot\+\_\+matrix.\+c 파일의 16 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+17 \{
+18 \textcolor{comment}{//�ʱ�ȭ �Լ�}
+19     \hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP} = init;
+20 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{dot__matrix_8c_aeb9b4954ea6a435d377cdab117fbac3f}\label{dot__matrix_8c_aeb9b4954ea6a435d377cdab117fbac3f}} 
+\index{dot\+\_\+matrix.\+c@{dot\+\_\+matrix.\+c}!Dot\+\_\+port\+Set@{Dot\+\_\+port\+Set}}
+\index{Dot\+\_\+port\+Set@{Dot\+\_\+port\+Set}!dot\+\_\+matrix.\+c@{dot\+\_\+matrix.\+c}}
+\subsubsection{\texorpdfstring{Dot\+\_\+port\+Set()}{Dot\_portSet()}}
+{\footnotesize\ttfamily \hyperlink{dot__matrix_8h_a03f53cc8acae29f160b6cc647fa3db16}{dot\+\_\+port} Dot\+\_\+port\+Set (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{port,  }\item[{unsigned char}]{p\+Num }\end{DoxyParamCaption})}
+
+
+
+dot\+\_\+matrix.\+c 파일의 56 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+57 \{
+58 \textcolor{comment}{//��Ʈ ���� �Լ�}
+59     \hyperlink{struct__dot__port}{dot\_port} dp;
+60     dp.\hyperlink{struct__dot__port_adfcfd7f304a337776b36f479221f197c}{port} = port;
+61     dp.\hyperlink{struct__dot__port_a96ed4cdf432ec894de51f1c6246bdb29}{portNum} = pNum;
+62     \textcolor{keywordflow}{return} dp;
+63 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5

@@ -1,0 +1,19 @@
+digraph "ISR"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node20 [label="ISR",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node20 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="move",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tetris_8c.html#aa9ef6682140bf3f91bf3614b906b21c1"];
+  Node21 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="Collision",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed"];
+  Node21 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="spin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tetris_8c.html#af87828117d0582d0031f563933f97bfd"];
+  Node23 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="speed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f"];
+  Node20 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="drop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tetris_8c.html#a2f4c2dc71944a7a7a5a272dfce0e8d43"];
+  Node25 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

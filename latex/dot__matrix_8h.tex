@@ -1,0 +1,334 @@
+\hypertarget{dot__matrix_8h}{}\section{dot\+\_\+matrix.\+h 파일 참조}
+\label{dot__matrix_8h}\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+dot\+\_\+matrix.\+h에 대한 include 의존 그래프
+% FIG 0
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 1
+\subsection*{데이터 구조}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__dot__port}{\+\_\+dot\+\_\+port}
+\item 
+union \hyperlink{union__matrix__pointer}{\+\_\+matrix\+\_\+pointer}
+\item 
+struct \hyperlink{struct__dot__matrix}{\+\_\+dot\+\_\+matrix}
+\end{DoxyCompactItemize}
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dot__matrix_8h_aeb8a5ef2271f09a15eb5be5b074de336}{bit\+\_\+set}(reg,  bit)~(reg) $\vert$=  (1 $<$$<$ (bit))
+\item 
+\#define \hyperlink{dot__matrix_8h_a02e29291d2376cb9176b66b7f677073d}{bit\+\_\+clr}(reg,  bit)~(reg) \&= $\sim$(1 $<$$<$ (bit))
+\item 
+\#define \hyperlink{dot__matrix_8h_a13666af55c99ab3d43502dbc0a31abe9}{S\+C\+K\+\_\+\+P\+U\+L\+SE}
+\item 
+\#define \hyperlink{dot__matrix_8h_aecec6fe7d564b668c982384e80872d7e}{R\+C\+K\+\_\+\+P\+U\+L\+SE}
+\item 
+\#define \hyperlink{dot__matrix_8h_adb85e115dbb163a04221eed5e666b490}{D\+O\+T\+\_\+\+R\+O\+W\+\_\+\+S\+I\+ZE}~8
+\item 
+\#define \hyperlink{dot__matrix_8h_a9a0eb1b24ffece5f2dda481e0dc85aed}{D\+O\+T\+\_\+\+C\+O\+L\+\_\+\+S\+I\+ZE}~16
+\end{DoxyCompactItemize}
+\subsection*{타입정의}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct__dot__port}{\+\_\+dot\+\_\+port} \hyperlink{dot__matrix_8h_a03f53cc8acae29f160b6cc647fa3db16}{dot\+\_\+port}
+\item 
+typedef union \hyperlink{union__matrix__pointer}{\+\_\+matrix\+\_\+pointer} \hyperlink{dot__matrix_8h_a5e6e638164edbbc5442305b37227e062}{matrix\+\_\+pointer}
+\item 
+typedef struct \hyperlink{struct__dot__matrix}{\+\_\+dot\+\_\+matrix} \hyperlink{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}{dot\+\_\+matrix}
+\item 
+typedef enum \hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0f}{\+\_\+disp\+\_\+state} \hyperlink{dot__matrix_8h_af0d98cd418df159977228a2fbe6b22b2}{disp\+\_\+state}
+\end{DoxyCompactItemize}
+\subsection*{열거형 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0f}{\+\_\+disp\+\_\+state} \{ \newline
+\hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75}{O\+FF} =0b000, 
+\hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faa60bd322f93178d68184e30e162571ca}{G\+R\+E\+EN} = 0b001, 
+\hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faf80f9a890089d211842d59625e561f88}{R\+ED} = 0b010, 
+\hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0fa906b7cc20b42994dda4da492767c1de9}{R\+E\+V\+E\+R\+SE} = 0b100, 
+\newline
+\hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faba595d8bca8bc5e67c37c0a9d89becfa}{UP} = 0b1000, 
+\hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a}{A\+LL} = 0b011
+ \}
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{dot__matrix_8h_a857f3c97866ae6ab3ce77f2964c0c382}{Dot\+\_\+init} (\hyperlink{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}{dot\+\_\+matrix} $\ast$init)
+\item 
+void \hyperlink{dot__matrix_8h_a3b9b4c65b72b422e214de913df281cfe}{Dot\+\_\+disp} (\hyperlink{dot__matrix_8h_af0d98cd418df159977228a2fbe6b22b2}{disp\+\_\+state} state)
+\item 
+unsigned char \hyperlink{dot__matrix_8h_a118591df4cb944dd32f883710ac8a2c2}{Dot\+\_\+data} (unsigned char y, unsigned char x)
+\item 
+\hyperlink{dot__matrix_8h_a03f53cc8acae29f160b6cc647fa3db16}{dot\+\_\+port} \hyperlink{dot__matrix_8h_aeb9b4954ea6a435d377cdab117fbac3f}{Dot\+\_\+port\+Set} (uint8\+\_\+t $\ast$port, unsigned char p\+Num)
+\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}{dot\+\_\+matrix} $\ast$ \hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\+\_\+dotP}
+\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{dot__matrix_8h_a02e29291d2376cb9176b66b7f677073d}\label{dot__matrix_8h_a02e29291d2376cb9176b66b7f677073d}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!bit\+\_\+clr@{bit\+\_\+clr}}
+\index{bit\+\_\+clr@{bit\+\_\+clr}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{bit\+\_\+clr}{bit\_clr}}
+{\footnotesize\ttfamily \#define bit\+\_\+clr(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit }\end{DoxyParamCaption})~(reg) \&= $\sim$(1 $<$$<$ (bit))}
+
+
+
+dot\+\_\+matrix.\+h 파일의 20 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{dot__matrix_8h_aeb8a5ef2271f09a15eb5be5b074de336}\label{dot__matrix_8h_aeb8a5ef2271f09a15eb5be5b074de336}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!bit\+\_\+set@{bit\+\_\+set}}
+\index{bit\+\_\+set@{bit\+\_\+set}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{bit\+\_\+set}{bit\_set}}
+{\footnotesize\ttfamily \#define bit\+\_\+set(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit }\end{DoxyParamCaption})~(reg) $\vert$=  (1 $<$$<$ (bit))}
+
+
+
+dot\+\_\+matrix.\+h 파일의 19 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{dot__matrix_8h_a9a0eb1b24ffece5f2dda481e0dc85aed}\label{dot__matrix_8h_a9a0eb1b24ffece5f2dda481e0dc85aed}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!D\+O\+T\+\_\+\+C\+O\+L\+\_\+\+S\+I\+ZE@{D\+O\+T\+\_\+\+C\+O\+L\+\_\+\+S\+I\+ZE}}
+\index{D\+O\+T\+\_\+\+C\+O\+L\+\_\+\+S\+I\+ZE@{D\+O\+T\+\_\+\+C\+O\+L\+\_\+\+S\+I\+ZE}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{D\+O\+T\+\_\+\+C\+O\+L\+\_\+\+S\+I\+ZE}{DOT\_COL\_SIZE}}
+{\footnotesize\ttfamily \#define D\+O\+T\+\_\+\+C\+O\+L\+\_\+\+S\+I\+ZE~16}
+
+
+
+dot\+\_\+matrix.\+h 파일의 32 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{dot__matrix_8h_adb85e115dbb163a04221eed5e666b490}\label{dot__matrix_8h_adb85e115dbb163a04221eed5e666b490}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!D\+O\+T\+\_\+\+R\+O\+W\+\_\+\+S\+I\+ZE@{D\+O\+T\+\_\+\+R\+O\+W\+\_\+\+S\+I\+ZE}}
+\index{D\+O\+T\+\_\+\+R\+O\+W\+\_\+\+S\+I\+ZE@{D\+O\+T\+\_\+\+R\+O\+W\+\_\+\+S\+I\+ZE}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{D\+O\+T\+\_\+\+R\+O\+W\+\_\+\+S\+I\+ZE}{DOT\_ROW\_SIZE}}
+{\footnotesize\ttfamily \#define D\+O\+T\+\_\+\+R\+O\+W\+\_\+\+S\+I\+ZE~8}
+
+
+
+dot\+\_\+matrix.\+h 파일의 28 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{dot__matrix_8h_aecec6fe7d564b668c982384e80872d7e}\label{dot__matrix_8h_aecec6fe7d564b668c982384e80872d7e}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!R\+C\+K\+\_\+\+P\+U\+L\+SE@{R\+C\+K\+\_\+\+P\+U\+L\+SE}}
+\index{R\+C\+K\+\_\+\+P\+U\+L\+SE@{R\+C\+K\+\_\+\+P\+U\+L\+SE}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{R\+C\+K\+\_\+\+P\+U\+L\+SE}{RCK\_PULSE}}
+{\footnotesize\ttfamily \#define R\+C\+K\+\_\+\+P\+U\+L\+SE}
+
+{\bfseries 값\+:}
+\begin{DoxyCode}
+\{\hyperlink{dot__matrix_8h_aeb8a5ef2271f09a15eb5be5b074de336}{bit\_set}(*(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.\hyperlink{struct__dot__port_adfcfd7f304a337776b36f479221f197c}{port}),(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.\hyperlink{struct__dot__port_a96ed4cdf432ec894de51f1c6246bdb29}{portNum}+3)); \(\backslash\)
+                    bit\_clr(*(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.\hyperlink{struct__dot__port_adfcfd7f304a337776b36f479221f197c}{port}),(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.
+      \hyperlink{struct__dot__port_a96ed4cdf432ec894de51f1c6246bdb29}{portNum}+3));\}
+\end{DoxyCode}
+
+
+dot\+\_\+matrix.\+h 파일의 24 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{dot__matrix_8h_a13666af55c99ab3d43502dbc0a31abe9}\label{dot__matrix_8h_a13666af55c99ab3d43502dbc0a31abe9}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!S\+C\+K\+\_\+\+P\+U\+L\+SE@{S\+C\+K\+\_\+\+P\+U\+L\+SE}}
+\index{S\+C\+K\+\_\+\+P\+U\+L\+SE@{S\+C\+K\+\_\+\+P\+U\+L\+SE}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{S\+C\+K\+\_\+\+P\+U\+L\+SE}{SCK\_PULSE}}
+{\footnotesize\ttfamily \#define S\+C\+K\+\_\+\+P\+U\+L\+SE}
+
+{\bfseries 값\+:}
+\begin{DoxyCode}
+\{\hyperlink{dot__matrix_8h_aeb8a5ef2271f09a15eb5be5b074de336}{bit\_set}(*(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.\hyperlink{struct__dot__port_adfcfd7f304a337776b36f479221f197c}{port}),(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.\hyperlink{struct__dot__port_a96ed4cdf432ec894de51f1c6246bdb29}{portNum}+2)); \(\backslash\)
+                    bit\_clr(*(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.\hyperlink{struct__dot__port_adfcfd7f304a337776b36f479221f197c}{port}),(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.
+      \hyperlink{struct__dot__port_a96ed4cdf432ec894de51f1c6246bdb29}{portNum}+2));\}
+\end{DoxyCode}
+
+
+dot\+\_\+matrix.\+h 파일의 22 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{타입정의 문서화}
+\mbox{\Hypertarget{dot__matrix_8h_af0d98cd418df159977228a2fbe6b22b2}\label{dot__matrix_8h_af0d98cd418df159977228a2fbe6b22b2}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!disp\+\_\+state@{disp\+\_\+state}}
+\index{disp\+\_\+state@{disp\+\_\+state}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{disp\+\_\+state}{disp\_state}}
+{\footnotesize\ttfamily typedef enum \hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0f}{\+\_\+disp\+\_\+state} \hyperlink{dot__matrix_8h_af0d98cd418df159977228a2fbe6b22b2}{disp\+\_\+state}}
+
+\mbox{\Hypertarget{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}\label{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!dot\+\_\+matrix@{dot\+\_\+matrix}}
+\index{dot\+\_\+matrix@{dot\+\_\+matrix}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{dot\+\_\+matrix}{dot\_matrix}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct__dot__matrix}{\+\_\+dot\+\_\+matrix} \hyperlink{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}{dot\+\_\+matrix}}
+
+\mbox{\Hypertarget{dot__matrix_8h_a03f53cc8acae29f160b6cc647fa3db16}\label{dot__matrix_8h_a03f53cc8acae29f160b6cc647fa3db16}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!dot\+\_\+port@{dot\+\_\+port}}
+\index{dot\+\_\+port@{dot\+\_\+port}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{dot\+\_\+port}{dot\_port}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct__dot__port}{\+\_\+dot\+\_\+port} \hyperlink{dot__matrix_8h_a03f53cc8acae29f160b6cc647fa3db16}{dot\+\_\+port}}
+
+\mbox{\Hypertarget{dot__matrix_8h_a5e6e638164edbbc5442305b37227e062}\label{dot__matrix_8h_a5e6e638164edbbc5442305b37227e062}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!matrix\+\_\+pointer@{matrix\+\_\+pointer}}
+\index{matrix\+\_\+pointer@{matrix\+\_\+pointer}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{matrix\+\_\+pointer}{matrix\_pointer}}
+{\footnotesize\ttfamily typedef union \hyperlink{union__matrix__pointer}{\+\_\+matrix\+\_\+pointer} \hyperlink{dot__matrix_8h_a5e6e638164edbbc5442305b37227e062}{matrix\+\_\+pointer}}
+
+
+
+\subsection{열거형 타입 문서화}
+\mbox{\Hypertarget{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0f}\label{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0f}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!\+\_\+disp\+\_\+state@{\+\_\+disp\+\_\+state}}
+\index{\+\_\+disp\+\_\+state@{\+\_\+disp\+\_\+state}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+disp\+\_\+state}{\_disp\_state}}
+{\footnotesize\ttfamily enum \hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0f}{\+\_\+disp\+\_\+state}}
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+FF@{O\+FF}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!O\+FF@{O\+FF}}}\mbox{\Hypertarget{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75}\label{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75}} 
+O\+FF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+R\+E\+EN@{G\+R\+E\+EN}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!G\+R\+E\+EN@{G\+R\+E\+EN}}}\mbox{\Hypertarget{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faa60bd322f93178d68184e30e162571ca}\label{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faa60bd322f93178d68184e30e162571ca}} 
+G\+R\+E\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+ED@{R\+ED}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!R\+ED@{R\+ED}}}\mbox{\Hypertarget{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faf80f9a890089d211842d59625e561f88}\label{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faf80f9a890089d211842d59625e561f88}} 
+R\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+V\+E\+R\+SE@{R\+E\+V\+E\+R\+SE}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!R\+E\+V\+E\+R\+SE@{R\+E\+V\+E\+R\+SE}}}\mbox{\Hypertarget{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0fa906b7cc20b42994dda4da492767c1de9}\label{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0fa906b7cc20b42994dda4da492767c1de9}} 
+R\+E\+V\+E\+R\+SE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!UP@{UP}}}\mbox{\Hypertarget{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faba595d8bca8bc5e67c37c0a9d89becfa}\label{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faba595d8bca8bc5e67c37c0a9d89becfa}} 
+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+LL@{A\+LL}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!A\+LL@{A\+LL}}}\mbox{\Hypertarget{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a}\label{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a}} 
+A\+LL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+dot\+\_\+matrix.\+h 파일의 66 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+67 \{
+68     \hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75}{OFF}=0b000,
+69     \hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faa60bd322f93178d68184e30e162571ca}{GREEN} = 0b001,
+70     \hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faf80f9a890089d211842d59625e561f88}{RED} = 0b010,
+71     \hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0fa906b7cc20b42994dda4da492767c1de9}{REVERSE} = 0b100,
+72     \hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faba595d8bca8bc5e67c37c0a9d89becfa}{UP} = 0b1000,
+73     \hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a}{ALL} = 0b011,
+74 \}\hyperlink{dot__matrix_8h_af0d98cd418df159977228a2fbe6b22b2}{disp\_state};
+\end{DoxyCode}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{dot__matrix_8h_a118591df4cb944dd32f883710ac8a2c2}\label{dot__matrix_8h_a118591df4cb944dd32f883710ac8a2c2}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!Dot\+\_\+data@{Dot\+\_\+data}}
+\index{Dot\+\_\+data@{Dot\+\_\+data}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{Dot\+\_\+data()}{Dot\_data()}}
+{\footnotesize\ttfamily unsigned char Dot\+\_\+data (\begin{DoxyParamCaption}\item[{unsigned char}]{y,  }\item[{unsigned char}]{x }\end{DoxyParamCaption})}
+
+
+
+dot\+\_\+matrix.\+c 파일의 39 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+40 \{
+41 \textcolor{comment}{//������ �Լ�, ���� �ϳ�, ���ڹ迭 �� �޾ƿ�}
+42     \textcolor{keywordflow}{return} (( *((\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_ae24a27965d4b51bdc8068bc7a445ed68}{greenPtr}).all+y) >> x) & 0x01 ) | (( (*((
+      \hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a1a5469905d186f7dd9479561eb9ae6e2}{redPtr}).all+y) >> x) & 0x01 ) << 1);
+43 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{dot__matrix_8h_a3b9b4c65b72b422e214de913df281cfe}\label{dot__matrix_8h_a3b9b4c65b72b422e214de913df281cfe}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!Dot\+\_\+disp@{Dot\+\_\+disp}}
+\index{Dot\+\_\+disp@{Dot\+\_\+disp}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{Dot\+\_\+disp()}{Dot\_disp()}}
+{\footnotesize\ttfamily void Dot\+\_\+disp (\begin{DoxyParamCaption}\item[{\hyperlink{dot__matrix_8h_af0d98cd418df159977228a2fbe6b22b2}{disp\+\_\+state}}]{state }\end{DoxyParamCaption})}
+
+
+
+dot\+\_\+matrix.\+c 파일의 22 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+23 \{
+24 \textcolor{comment}{//��� �Լ�}
+25     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} i,j;
+26     \textcolor{keywordflow}{for}(i=0;i<\hyperlink{dot__matrix_8h_a9a0eb1b24ffece5f2dda481e0dc85aed}{DOT\_COL\_SIZE};i++)
+27     \{
+28         \textcolor{keywordflow}{for}(j=0;j<\hyperlink{dot__matrix_8h_adb85e115dbb163a04221eed5e666b490}{DOT\_ROW\_SIZE};j++)
+29         \{
+30             *(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.\hyperlink{struct__dot__port_adfcfd7f304a337776b36f479221f197c}{port}) = ((\hyperlink{dot__matrix_8c_a118591df4cb944dd32f883710ac8a2c2}{Dot\_data}(i,j)&state)<<(
+      \hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row}.\hyperlink{struct__dot__port_a96ed4cdf432ec894de51f1c6246bdb29}{portNum}));
+31             \hyperlink{dot__matrix_8h_a13666af55c99ab3d43502dbc0a31abe9}{SCK\_PULSE}
+32         \}
+33         \_delay\_ms(5);
+34         \hyperlink{dot__matrix_8h_aecec6fe7d564b668c982384e80872d7e}{RCK\_PULSE}
+35         *(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a1ecc29bd3129a1772dc2497b384c71ec}{col}.\hyperlink{struct__dot__port_adfcfd7f304a337776b36f479221f197c}{port}) = (i<<(\hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP}->\hyperlink{struct__dot__matrix_a1ecc29bd3129a1772dc2497b384c71ec}{col}.\hyperlink{struct__dot__port_a96ed4cdf432ec894de51f1c6246bdb29}{portNum}));
+36     \}
+37 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{dot__matrix_8h_a857f3c97866ae6ab3ce77f2964c0c382}\label{dot__matrix_8h_a857f3c97866ae6ab3ce77f2964c0c382}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!Dot\+\_\+init@{Dot\+\_\+init}}
+\index{Dot\+\_\+init@{Dot\+\_\+init}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{Dot\+\_\+init()}{Dot\_init()}}
+{\footnotesize\ttfamily void Dot\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}{dot\+\_\+matrix} $\ast$}]{init }\end{DoxyParamCaption})}
+
+
+
+dot\+\_\+matrix.\+c 파일의 16 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+17 \{
+18 \textcolor{comment}{//�ʱ�ȭ �Լ�}
+19     \hyperlink{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}{\_dotP} = init;
+20 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{dot__matrix_8h_aeb9b4954ea6a435d377cdab117fbac3f}\label{dot__matrix_8h_aeb9b4954ea6a435d377cdab117fbac3f}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!Dot\+\_\+port\+Set@{Dot\+\_\+port\+Set}}
+\index{Dot\+\_\+port\+Set@{Dot\+\_\+port\+Set}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{Dot\+\_\+port\+Set()}{Dot\_portSet()}}
+{\footnotesize\ttfamily \hyperlink{dot__matrix_8h_a03f53cc8acae29f160b6cc647fa3db16}{dot\+\_\+port} Dot\+\_\+port\+Set (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{port,  }\item[{unsigned char}]{p\+Num }\end{DoxyParamCaption})}
+
+
+
+dot\+\_\+matrix.\+c 파일의 56 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+57 \{
+58 \textcolor{comment}{//��Ʈ ���� �Լ�}
+59     \hyperlink{struct__dot__port}{dot\_port} dp;
+60     dp.\hyperlink{struct__dot__port_adfcfd7f304a337776b36f479221f197c}{port} = port;
+61     dp.\hyperlink{struct__dot__port_a96ed4cdf432ec894de51f1c6246bdb29}{portNum} = pNum;
+62     \textcolor{keywordflow}{return} dp;
+63 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}\label{dot__matrix_8h_a164ef95cb1c3397e35b6411d98498d90}} 
+\index{dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}!\+\_\+dotP@{\+\_\+dotP}}
+\index{\+\_\+dotP@{\+\_\+dotP}!dot\+\_\+matrix.\+h@{dot\+\_\+matrix.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+dotP}{\_dotP}}
+{\footnotesize\ttfamily \hyperlink{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}{dot\+\_\+matrix}$\ast$ \+\_\+dotP\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+dot\+\_\+matrix.\+h 파일의 76 번째 라인에서 정의되었습니다.
+

@@ -1,0 +1,865 @@
+\hypertarget{tetris_8c}{}\section{tetris.\+c 파일 참조}
+\label{tetris_8c}\index{tetris.\+c@{tetris.\+c}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}dot\+\_\+matrix.\+h\char`\"{}}\newline
+tetris.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tetris_8c_a437ef08681e7210d6678427030446a54}{L\+E\+FT}~75
+\item 
+\#define \hyperlink{tetris_8c_a80fb826a684cf3f0d306b22aa100ddac}{R\+I\+G\+HT}~77
+\item 
+\#define \hyperlink{tetris_8c_a1965eaca47dbf3f87acdafc2208f04eb}{UP}~72
+\item 
+\#define \hyperlink{tetris_8c_a4193cd1c8c2e6ebd0e056fa2364a663f}{D\+O\+WN}~80
+\item 
+\#define \hyperlink{tetris_8c_a8661ce774b9fc30c647d1bf4ccec7a14}{P\+A\+D\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY}~30
+\item 
+\#define \hyperlink{tetris_8c_a4fbe54d91d53aabbbcec17706f6570ed}{P\+A\+D\+\_\+X}~0
+\item 
+\#define \hyperlink{tetris_8c_a5fb02b736c0c917dc78a96516bf2aac2}{P\+A\+D\+\_\+Y}~1
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+signed char \hyperlink{tetris_8c_a71750e3c93ffff30f20f22f036e566ed}{Collision} (void)
+\item 
+void \hyperlink{tetris_8c_a2f4c2dc71944a7a7a5a272dfce0e8d43}{drop} ()
+\item 
+void \hyperlink{tetris_8c_a56c5cf8a568cff737ff95520cbe6b405}{draw} ()
+\item 
+void \hyperlink{tetris_8c_acc53888f8fafb142cbb1a9fbe33bf957}{New\+Tetriminos} (void)
+\item 
+void \hyperlink{tetris_8c_af87828117d0582d0031f563933f97bfd}{spin} ()
+\item 
+void \hyperlink{tetris_8c_aa9ef6682140bf3f91bf3614b906b21c1}{move} (int n)
+\item 
+void \hyperlink{tetris_8c_a1fcb45e5d2428352eb36b487d1d4eea3}{remove} ()
+\item 
+void \hyperlink{tetris_8c_ad12852dedfdcba50139ad6ddb53bf54f}{speed} (unsigned char \hyperlink{tetris_8c_a0d957bf1afecc6bd1ebcb451c7abe11d}{level})
+\item 
+int \hyperlink{tetris_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\item 
+\hyperlink{tetris_8c_afea150fcd685610cb9f7672fce361e53}{I\+SR} (I\+N\+T0\+\_\+vect)
+\item 
+\hyperlink{tetris_8c_add2d7cdddfb682dcc0391e60cf42c7d6}{I\+SR} (T\+I\+M\+E\+R0\+\_\+\+O\+V\+F\+\_\+vect)
+\item 
+\hyperlink{tetris_8c_a05c2e5b588ced1cd7312f5b0edc5b295}{I\+SR} (A\+D\+C\+\_\+vect)
+\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \hyperlink{tetris_8c_abca4bf3dca1f8f7a997b8c0ccacbb963}{\+\_\+timer\+\_\+flag}
+\item 
+unsigned char \hyperlink{tetris_8c_a62e5b0cab34a72f7aae4310d6000abed}{count}
+\item 
+unsigned char \hyperlink{tetris_8c_ac782b56188a1f8e4e0ae82fc32ad05ec}{pad\+\_\+count}
+\item 
+\hyperlink{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}{dot\+\_\+matrix} $\ast$ \hyperlink{tetris_8c_a62237d5bb1265d8dd6194b6d482c7dcf}{dP}
+\item 
+unsigned short \hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos} \mbox{[}7\mbox{]}\mbox{[}4\mbox{]}
+\item 
+unsigned char \hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}
+\item 
+unsigned char \hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}
+\item 
+unsigned char \hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\+\_\+line}
+\item 
+unsigned char \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\+\_\+col}
+\item 
+unsigned short \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\+\_\+line} \mbox{[}4\mbox{]}
+\item 
+unsigned short \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\+\_\+board} \mbox{[}17\mbox{]}
+\item 
+unsigned char \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red} \mbox{[}16\mbox{]}
+\item 
+unsigned char \hyperlink{tetris_8c_ad20ce888354be47960f1fbe60be9b197}{green} \mbox{[}16\mbox{]}
+\item 
+unsigned char \hyperlink{tetris_8c_a0d957bf1afecc6bd1ebcb451c7abe11d}{level} = 1
+\item 
+unsigned char \hyperlink{tetris_8c_a5e25b037e0c4f44ea80058d66a7529e1}{Collision\+\_\+flag} = 1
+\item 
+unsigned int \hyperlink{tetris_8c_a415a47d48605e8663920d695a9a4251a}{adc} \mbox{[}2\mbox{]}
+\item 
+unsigned char \hyperlink{tetris_8c_a08c72d06034953df162b5cc6dd0e0360}{mux} = 0
+\item 
+unsigned char \hyperlink{tetris_8c_ab563c4c7faad8b2ba22fb0ded4d02ee1}{delay} = 250
+\item 
+unsigned char \hyperlink{tetris_8c_a30e19b77a300782bfc76ddcc416f926e}{remove\+\_\+count} = 0
+\item 
+unsigned char \hyperlink{tetris_8c_ac61a34f9c340a56962d27c7e3372674d}{end\+\_\+flag} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{tetris_8c_a4193cd1c8c2e6ebd0e056fa2364a663f}\label{tetris_8c_a4193cd1c8c2e6ebd0e056fa2364a663f}} 
+\index{tetris.\+c@{tetris.\+c}!D\+O\+WN@{D\+O\+WN}}
+\index{D\+O\+WN@{D\+O\+WN}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{D\+O\+WN}{DOWN}}
+{\footnotesize\ttfamily \#define D\+O\+WN~80}
+
+
+
+tetris.\+c 파일의 15 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a437ef08681e7210d6678427030446a54}\label{tetris_8c_a437ef08681e7210d6678427030446a54}} 
+\index{tetris.\+c@{tetris.\+c}!L\+E\+FT@{L\+E\+FT}}
+\index{L\+E\+FT@{L\+E\+FT}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{L\+E\+FT}{LEFT}}
+{\footnotesize\ttfamily \#define L\+E\+FT~75}
+
+
+
+tetris.\+c 파일의 12 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a8661ce774b9fc30c647d1bf4ccec7a14}\label{tetris_8c_a8661ce774b9fc30c647d1bf4ccec7a14}} 
+\index{tetris.\+c@{tetris.\+c}!P\+A\+D\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY@{P\+A\+D\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY}}
+\index{P\+A\+D\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY@{P\+A\+D\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{P\+A\+D\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY}{PAD\_SENSITIVITY}}
+{\footnotesize\ttfamily \#define P\+A\+D\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY~30}
+
+
+
+tetris.\+c 파일의 18 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a4fbe54d91d53aabbbcec17706f6570ed}\label{tetris_8c_a4fbe54d91d53aabbbcec17706f6570ed}} 
+\index{tetris.\+c@{tetris.\+c}!P\+A\+D\+\_\+X@{P\+A\+D\+\_\+X}}
+\index{P\+A\+D\+\_\+X@{P\+A\+D\+\_\+X}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{P\+A\+D\+\_\+X}{PAD\_X}}
+{\footnotesize\ttfamily \#define P\+A\+D\+\_\+X~0}
+
+
+
+tetris.\+c 파일의 19 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a5fb02b736c0c917dc78a96516bf2aac2}\label{tetris_8c_a5fb02b736c0c917dc78a96516bf2aac2}} 
+\index{tetris.\+c@{tetris.\+c}!P\+A\+D\+\_\+Y@{P\+A\+D\+\_\+Y}}
+\index{P\+A\+D\+\_\+Y@{P\+A\+D\+\_\+Y}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{P\+A\+D\+\_\+Y}{PAD\_Y}}
+{\footnotesize\ttfamily \#define P\+A\+D\+\_\+Y~1}
+
+
+
+tetris.\+c 파일의 20 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a80fb826a684cf3f0d306b22aa100ddac}\label{tetris_8c_a80fb826a684cf3f0d306b22aa100ddac}} 
+\index{tetris.\+c@{tetris.\+c}!R\+I\+G\+HT@{R\+I\+G\+HT}}
+\index{R\+I\+G\+HT@{R\+I\+G\+HT}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{R\+I\+G\+HT}{RIGHT}}
+{\footnotesize\ttfamily \#define R\+I\+G\+HT~77}
+
+
+
+tetris.\+c 파일의 13 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a1965eaca47dbf3f87acdafc2208f04eb}\label{tetris_8c_a1965eaca47dbf3f87acdafc2208f04eb}} 
+\index{tetris.\+c@{tetris.\+c}!UP@{UP}}
+\index{UP@{UP}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{UP}{UP}}
+{\footnotesize\ttfamily \#define UP~72}
+
+
+
+tetris.\+c 파일의 14 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{tetris_8c_a71750e3c93ffff30f20f22f036e566ed}\label{tetris_8c_a71750e3c93ffff30f20f22f036e566ed}} 
+\index{tetris.\+c@{tetris.\+c}!Collision@{Collision}}
+\index{Collision@{Collision}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{Collision()}{Collision()}}
+{\footnotesize\ttfamily signed char Collision (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 54 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+55 \{
+56    \textcolor{keywordflow}{if} (((\hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line}] & \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[0]) != 0) | ((
+      \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 1] & temp\_line[1]) != 0) |
+57       ((\hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 2] & temp\_line[2]) != 0) | ((
+      \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 3] & temp\_line[3]) != 0))
+58       \textcolor{keywordflow}{return} -1;         \textcolor{comment}{// �浹}
+59    \textcolor{keywordflow}{else}
+60       \textcolor{keywordflow}{return} 0;  \textcolor{comment}{// �浹 ����}
+61 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{tetris_8c_a56c5cf8a568cff737ff95520cbe6b405}\label{tetris_8c_a56c5cf8a568cff737ff95520cbe6b405}} 
+\index{tetris.\+c@{tetris.\+c}!draw@{draw}}
+\index{draw@{draw}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 79 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+80 \{
+81    \textcolor{keywordtype}{int} i;
+82    \textcolor{keywordflow}{for} (i = 0; i < 16; i++)
+83    \{
+84       \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red}[i] = 0x00;
+85       \hyperlink{tetris_8c_ad20ce888354be47960f1fbe60be9b197}{green}[i] = \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[i] >> 4;
+86    \}
+87 
+88    \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line}] = \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line}] | (\hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[0] >> 4);
+89    \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 1] = \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 1] | (\hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[1] >> 4);
+90    \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 2] = \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 2] | (\hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[2] >> 4);
+91    \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 3] = \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 3] | (\hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[3] >> 4);
+92 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{tetris_8c_a2f4c2dc71944a7a7a5a272dfce0e8d43}\label{tetris_8c_a2f4c2dc71944a7a7a5a272dfce0e8d43}} 
+\index{tetris.\+c@{tetris.\+c}!drop@{drop}}
+\index{drop@{drop}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{drop()}{drop()}}
+{\footnotesize\ttfamily void drop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 63 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+64 \{
+65    \hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line}++;
+66 
+67    \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a71750e3c93ffff30f20f22f036e566ed}{Collision}() == -1)
+68    \{
+69       \hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line}--;
+70       \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line}] = \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line}] | 
+      \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[0];
+71       \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 1] = \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 1] | 
+      \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[1];
+72       \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 2] = \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 2] | 
+      \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[2];
+73       \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 3] = \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[\hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} + 3] | 
+      \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[3];
+74 
+75       \hyperlink{tetris_8c_a5e25b037e0c4f44ea80058d66a7529e1}{Collision\_flag} = 1;
+76    \}
+77 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{tetris_8c_afea150fcd685610cb9f7672fce361e53}\label{tetris_8c_afea150fcd685610cb9f7672fce361e53}} 
+\index{tetris.\+c@{tetris.\+c}!I\+SR@{I\+SR}}
+\index{I\+SR@{I\+SR}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{I\+S\+R()}{ISR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily I\+SR (\begin{DoxyParamCaption}\item[{I\+N\+T0\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 288 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+289 \{
+290    \hyperlink{tetris_8c_af87828117d0582d0031f563933f97bfd}{spin}();
+291 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{tetris_8c_add2d7cdddfb682dcc0391e60cf42c7d6}\label{tetris_8c_add2d7cdddfb682dcc0391e60cf42c7d6}} 
+\index{tetris.\+c@{tetris.\+c}!I\+SR@{I\+SR}}
+\index{I\+SR@{I\+SR}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{I\+S\+R()}{ISR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily I\+SR (\begin{DoxyParamCaption}\item[{T\+I\+M\+E\+R0\+\_\+\+O\+V\+F\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 293 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+293                      \{
+294    \hyperlink{tetris_8c_a62e5b0cab34a72f7aae4310d6000abed}{count}++;
+295    \hyperlink{tetris_8c_ac782b56188a1f8e4e0ae82fc32ad05ec}{pad\_count}++;
+296    TCNT0 = 6;
+297    \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_ac782b56188a1f8e4e0ae82fc32ad05ec}{pad\_count} == \hyperlink{tetris_8c_a8661ce774b9fc30c647d1bf4ccec7a14}{PAD\_SENSITIVITY})
+298    \{
+299       \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a415a47d48605e8663920d695a9a4251a}{adc}[0]>500)    \textcolor{comment}{//����}
+300       \{
+301          \hyperlink{tetris_8c_aa9ef6682140bf3f91bf3614b906b21c1}{move}(\hyperlink{tetris_8c_a437ef08681e7210d6678427030446a54}{LEFT});
+302          \textcolor{comment}{//pad\_value = LEFT;}
+303       \}
+304       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a415a47d48605e8663920d695a9a4251a}{adc}[0]<300)   \textcolor{comment}{//������}
+305       \{
+306          \hyperlink{tetris_8c_aa9ef6682140bf3f91bf3614b906b21c1}{move}(\hyperlink{tetris_8c_a80fb826a684cf3f0d306b22aa100ddac}{RIGHT});
+307       \}
+308       \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a415a47d48605e8663920d695a9a4251a}{adc}[1]<300)        \textcolor{comment}{//�Ʒ�}
+309          \hyperlink{tetris_8c_ab563c4c7faad8b2ba22fb0ded4d02ee1}{delay} = 30;
+310       \textcolor{comment}{//   else if(adc[1]>500)}
+311       \textcolor{comment}{//      move(UP);}
+312       \textcolor{keywordflow}{else}
+313          \hyperlink{tetris_8c_ad12852dedfdcba50139ad6ddb53bf54f}{speed}(\hyperlink{tetris_8c_a0d957bf1afecc6bd1ebcb451c7abe11d}{level});
+314       \hyperlink{tetris_8c_ac782b56188a1f8e4e0ae82fc32ad05ec}{pad\_count} = 0;
+315    \}
+316    \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a62e5b0cab34a72f7aae4310d6000abed}{count} == \hyperlink{tetris_8c_ab563c4c7faad8b2ba22fb0ded4d02ee1}{delay}) \{
+317       \hyperlink{tetris_8c_a2f4c2dc71944a7a7a5a272dfce0e8d43}{drop}();
+318       \hyperlink{tetris_8c_a62e5b0cab34a72f7aae4310d6000abed}{count} = 0;
+319    \}
+320 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\mbox{\Hypertarget{tetris_8c_a05c2e5b588ced1cd7312f5b0edc5b295}\label{tetris_8c_a05c2e5b588ced1cd7312f5b0edc5b295}} 
+\index{tetris.\+c@{tetris.\+c}!I\+SR@{I\+SR}}
+\index{I\+SR@{I\+SR}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{I\+S\+R()}{ISR()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily I\+SR (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 323 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+324 \{
+325    \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a08c72d06034953df162b5cc6dd0e0360}{mux} == \hyperlink{tetris_8c_a4fbe54d91d53aabbbcec17706f6570ed}{PAD\_X})
+326    \{
+327       \hyperlink{tetris_8c_a415a47d48605e8663920d695a9a4251a}{adc}[\hyperlink{tetris_8c_a4fbe54d91d53aabbbcec17706f6570ed}{PAD\_X}] = ADC;
+328       ADMUX = 0x40 | \hyperlink{tetris_8c_a5fb02b736c0c917dc78a96516bf2aac2}{PAD\_Y};
+329       \hyperlink{tetris_8c_a08c72d06034953df162b5cc6dd0e0360}{mux} = \hyperlink{tetris_8c_a5fb02b736c0c917dc78a96516bf2aac2}{PAD\_Y};
+330    \}
+331    \textcolor{keywordflow}{else}
+332    \{
+333       \hyperlink{tetris_8c_a415a47d48605e8663920d695a9a4251a}{adc}[\hyperlink{tetris_8c_a5fb02b736c0c917dc78a96516bf2aac2}{PAD\_Y}] = ADC;
+334       ADMUX = 0x40 | \hyperlink{tetris_8c_a4fbe54d91d53aabbbcec17706f6570ed}{PAD\_X};
+335       \hyperlink{tetris_8c_a08c72d06034953df162b5cc6dd0e0360}{mux} = \hyperlink{tetris_8c_a4fbe54d91d53aabbbcec17706f6570ed}{PAD\_X};
+336    \}
+337 
+338 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{tetris_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{tetris_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{tetris.\+c@{tetris.\+c}!main@{main}}
+\index{main@{main}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 233 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+234 \{
+235    DDRB = 0xff;
+236    DDRC = 0xff;
+237    PORTB = 0x00;
+238    PORTC = 0x00;
+239    \textcolor{keywordtype}{int} i = 0;
+240 
+241    \textcolor{keywordflow}{for} (i = 0; i < 20; i++)
+242       \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[i] = 0x700E;   \textcolor{comment}{// 0111000000001110}
+243 
+244    \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[16] = 0xFFFF;
+245    \hyperlink{struct__dot__matrix}{dot\_matrix} dot\_show;           \textcolor{comment}{//��Ʈ ��Ʈ���� ����ü ����}
+246 
+247    dot\_show.\hyperlink{struct__dot__matrix_a549cd7f99fcdc1c15298e7a72ed1833e}{row} = \hyperlink{dot__matrix_8c_aeb9b4954ea6a435d377cdab117fbac3f}{Dot\_portSet}(&PORTB, 0);     \textcolor{comment}{//�� ��Ʈ, ���� �ɹ�ȣ ����}
+248    dot\_show.\hyperlink{struct__dot__matrix_a1ecc29bd3129a1772dc2497b384c71ec}{col} = \hyperlink{dot__matrix_8c_aeb9b4954ea6a435d377cdab117fbac3f}{Dot\_portSet}(&PORTC, 0);     \textcolor{comment}{//�� ��Ʈ, ���� �ɹ�ȣ ����}
+249    dot\_show.\hyperlink{struct__dot__matrix_ae24a27965d4b51bdc8068bc7a445ed68}{greenPtr}.\hyperlink{union__matrix__pointer_a0e01cbf81d0496d1344177fe4d90c385}{all} = \hyperlink{tetris_8c_ad20ce888354be47960f1fbe60be9b197}{green};               \textcolor{comment}{//�ʷϻ� ����� �迭 ������ ����}
+250    dot\_show.\hyperlink{struct__dot__matrix_a1a5469905d186f7dd9479561eb9ae6e2}{redPtr}.\hyperlink{union__matrix__pointer_a0e01cbf81d0496d1344177fe4d90c385}{all} = \hyperlink{tetris_8c_a44d0e445041ca51a492e04db487a33eb}{red};                   \textcolor{comment}{//������ ����� �迭 ������ ����}
+251    \hyperlink{dot__matrix_8c_a857f3c97866ae6ab3ce77f2964c0c382}{Dot\_init}(&dot\_show);                         \textcolor{comment}{//��Ʈ��Ʈ���� �ʱ�ȭ}
+252 
+253     \textcolor{comment}{//���ͷ�Ʈ ����}
+254    EIMSK = 0x03;
+255    EICRA = 0b0000001010;
+256 
+257     \textcolor{comment}{//ADC(Pad) ��Ʈ �ʱ�ȭ}
+258    ADMUX = 0x40;
+259    ADCSRA = 0b11101111;
+260 
+261     \textcolor{comment}{//Ÿ�̸� �ʱ�ȭ}
+262    TIMSK = 1;
+263    TCCR0 = 6;
+264    TCNT0 = 6;
+265    SREG = 0x80;
+266 
+267     \textcolor{comment}{//���� �õ� ����}
+268    \_delay\_ms(5);
+269    srand(ADC);
+270    \textcolor{keywordflow}{while} (1)
+271    \{
+272       \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a5e25b037e0c4f44ea80058d66a7529e1}{Collision\_flag} == 1)
+273          \hyperlink{tetris_8c_acc53888f8fafb142cbb1a9fbe33bf957}{NewTetriminos}();
+274 
+275       \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_ac61a34f9c340a56962d27c7e3372674d}{end\_flag} == 1)
+276       \{
+277          \hyperlink{dot__matrix_8c_a3b9b4c65b72b422e214de913df281cfe}{Dot\_disp}(\hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75}{OFF});
+278          \textcolor{keywordflow}{break};
+279       \}
+280 
+281 
+282       \hyperlink{tetris_8c_a56c5cf8a568cff737ff95520cbe6b405}{draw}();
+283       \hyperlink{dot__matrix_8c_a3b9b4c65b72b422e214de913df281cfe}{Dot\_disp}(\hyperlink{dot__matrix_8h_a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a}{ALL});
+284       \textcolor{keyword}{remove}();
+285    \}
+286 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+\mbox{\Hypertarget{tetris_8c_aa9ef6682140bf3f91bf3614b906b21c1}\label{tetris_8c_aa9ef6682140bf3f91bf3614b906b21c1}} 
+\index{tetris.\+c@{tetris.\+c}!move@{move}}
+\index{move@{move}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void move (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 138 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+139 \{
+140    \textcolor{keywordflow}{switch} (n) \{
+141    \textcolor{keywordflow}{case} 0:
+142       \textcolor{keywordflow}{break};
+143    \textcolor{keywordflow}{case} \hyperlink{tetris_8c_a437ef08681e7210d6678427030446a54}{LEFT}: \textcolor{comment}{//����Ű �������� }
+144 
+145       \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col}++;
+146       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[0] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0xF000) >> 12) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+147       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[1] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x0F00) >> 8) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+148       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[2] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x00F0) >> 4) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+149       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[3] = (\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x000F) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+150 
+151       \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a71750e3c93ffff30f20f22f036e566ed}{Collision}() == -1)
+152       \{
+153          \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col}--;
+154          \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[0] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0xF000) >> 12) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+155          \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[1] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x0F00) >> 8) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+156          \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[2] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x00F0) >> 4) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+157          \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[3] = (\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x000F) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+158       \}
+159 
+160       \textcolor{keywordflow}{break};                     \textcolor{comment}{//�������� �� �� �ִ��� üũ �� �����ϸ� �̵�}
+161    \textcolor{keywordflow}{case} \hyperlink{tetris_8c_a80fb826a684cf3f0d306b22aa100ddac}{RIGHT}: \textcolor{comment}{//������ ����Ű ��������- ���� �����ϰ� ó���� }
+162       \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col}--;
+163       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[0] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0xF000) >> 12) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+164       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[1] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x0F00) >> 8) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+165       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[2] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x00F0) >> 4) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+166       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[3] = (\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x000F) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+167 
+168       \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a71750e3c93ffff30f20f22f036e566ed}{Collision}() == -1)
+169       \{
+170          \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col}++;
+171          \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[0] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0xF000) >> 12) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+172          \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[1] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x0F00) >> 8) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+173          \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[2] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x00F0) >> 4) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+174          \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[3] = (\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x000F) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+175       \}
+176       \textcolor{keywordflow}{break};
+177    \textcolor{keywordflow}{case} \hyperlink{tetris_8c_a4193cd1c8c2e6ebd0e056fa2364a663f}{DOWN}: \textcolor{comment}{//�Ʒ��� ����Ű ��������-���� �����ϰ� ó���� }
+178             \textcolor{comment}{//      delay = 0;}
+179       \textcolor{keywordflow}{break};
+180    \textcolor{keywordflow}{case} \hyperlink{tetris_8c_a1965eaca47dbf3f87acdafc2208f04eb}{UP}: \textcolor{comment}{//���� ����Ű �������� }
+181       \hyperlink{tetris_8c_af87828117d0582d0031f563933f97bfd}{spin}();
+182       \textcolor{keywordflow}{break};
+183       \textcolor{comment}{//ȸ���� �� �ִ��� üũ �� �����ϸ� ȸ��}
+184    \}
+185 
+186 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+\mbox{\Hypertarget{tetris_8c_acc53888f8fafb142cbb1a9fbe33bf957}\label{tetris_8c_acc53888f8fafb142cbb1a9fbe33bf957}} 
+\index{tetris.\+c@{tetris.\+c}!New\+Tetriminos@{New\+Tetriminos}}
+\index{New\+Tetriminos@{New\+Tetriminos}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{New\+Tetriminos()}{NewTetriminos()}}
+{\footnotesize\ttfamily void New\+Tetriminos (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 95 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+96 \{
+97 
+98    \hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape} = rand() % 7;
+99    \textcolor{comment}{//   shape = (count % 7);}
+100    \textcolor{comment}{//   shape = (ADC%7);}
+101    \hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern} = 0;
+102 
+103    \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[0] = (\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0xF000) >> 6;
+104    \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[1] = (\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x0F00) >> 2;
+105    \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[2] = (\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x00F0) << 2;
+106    \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[3] = (\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x000F) << 6;
+107 
+108    \hyperlink{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}{cur\_line} = 0;                 \textcolor{comment}{// ��Ʈ���̳뽺 ���� ���� (�ֻ��� ����)}
+109    \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} = 9;
+110    \hyperlink{tetris_8c_a5e25b037e0c4f44ea80058d66a7529e1}{Collision\_flag} = 0;
+111 
+112    \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a71750e3c93ffff30f20f22f036e566ed}{Collision}() == -1)
+113       \hyperlink{tetris_8c_ac61a34f9c340a56962d27c7e3372674d}{end\_flag} = 1;
+114 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 11
+\mbox{\Hypertarget{tetris_8c_a1fcb45e5d2428352eb36b487d1d4eea3}\label{tetris_8c_a1fcb45e5d2428352eb36b487d1d4eea3}} 
+\index{tetris.\+c@{tetris.\+c}!remove@{remove}}
+\index{remove@{remove}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 188 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+189 \{
+190    \textcolor{keywordtype}{int} i, j = 0;
+191    \textcolor{keywordflow}{for} (i = 0; i < 16; i++)
+192    \{
+193       \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[i] == 0x7FFE)
+194       \{
+195          \hyperlink{tetris_8c_a30e19b77a300782bfc76ddcc416f926e}{remove\_count}++;
+196          \textcolor{keywordflow}{for} (j = i; j > 0; j--)
+197          \{
+198             \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[j] = \hyperlink{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}{game\_board}[j - 1];
+199             
+200          \}
+201       \}
+202    \}
+203    \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a30e19b77a300782bfc76ddcc416f926e}{remove\_count} == 5)\{
+204       \hyperlink{tetris_8c_a0d957bf1afecc6bd1ebcb451c7abe11d}{level}++;
+205       \hyperlink{tetris_8c_ad12852dedfdcba50139ad6ddb53bf54f}{speed}(\hyperlink{tetris_8c_a0d957bf1afecc6bd1ebcb451c7abe11d}{level});
+206       \hyperlink{tetris_8c_a30e19b77a300782bfc76ddcc416f926e}{remove\_count} = 0;\}
+207 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 12
+\mbox{\Hypertarget{tetris_8c_ad12852dedfdcba50139ad6ddb53bf54f}\label{tetris_8c_ad12852dedfdcba50139ad6ddb53bf54f}} 
+\index{tetris.\+c@{tetris.\+c}!speed@{speed}}
+\index{speed@{speed}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{speed()}{speed()}}
+{\footnotesize\ttfamily void speed (\begin{DoxyParamCaption}\item[{unsigned char}]{level }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 209 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+210 \{
+211    \textcolor{keywordflow}{switch} (\hyperlink{tetris_8c_a0d957bf1afecc6bd1ebcb451c7abe11d}{level})
+212    \{
+213    \textcolor{keywordflow}{case} 1:
+214       \hyperlink{tetris_8c_ab563c4c7faad8b2ba22fb0ded4d02ee1}{delay} = 250;
+215       \textcolor{keywordflow}{break};
+216    \textcolor{keywordflow}{case} 2:
+217       \hyperlink{tetris_8c_ab563c4c7faad8b2ba22fb0ded4d02ee1}{delay} = 200;
+218       \textcolor{keywordflow}{break};
+219    \textcolor{keywordflow}{case} 3:
+220       \hyperlink{tetris_8c_ab563c4c7faad8b2ba22fb0ded4d02ee1}{delay} = 150;
+221       \textcolor{keywordflow}{break};
+222    \textcolor{keywordflow}{case} 4:
+223       \hyperlink{tetris_8c_ab563c4c7faad8b2ba22fb0ded4d02ee1}{delay} = 100;
+224       \textcolor{keywordflow}{break};
+225    \textcolor{keywordflow}{case} 5:
+226       \hyperlink{tetris_8c_ab563c4c7faad8b2ba22fb0ded4d02ee1}{delay} = 50;
+227       \textcolor{keywordflow}{break};
+228    \textcolor{keywordflow}{case} 6:
+229       \hyperlink{tetris_8c_ac61a34f9c340a56962d27c7e3372674d}{end\_flag} = 1;
+230    \}
+231 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 13
+\mbox{\Hypertarget{tetris_8c_af87828117d0582d0031f563933f97bfd}\label{tetris_8c_af87828117d0582d0031f563933f97bfd}} 
+\index{tetris.\+c@{tetris.\+c}!spin@{spin}}
+\index{spin@{spin}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{spin()}{spin()}}
+{\footnotesize\ttfamily void spin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tetris.\+c 파일의 116 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+117 \{
+118    \hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}++;
+119    \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern} == 4)
+120       \hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern} = 0;
+121 
+122    \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[0] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0xF000) >> 12) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+123    \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[1] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x0F00) >> 8) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+124    \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[2] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x00F0) >> 4) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+125    \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[3] = (\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x000F) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+126 
+127    \textcolor{keywordflow}{if} (\hyperlink{tetris_8c_a71750e3c93ffff30f20f22f036e566ed}{Collision}() == -1)
+128    \{
+129       \hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}--;
+130       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[0] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0xF000) >> 12) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+131       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[1] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x0F00) >> 8) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+132       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[2] = ((\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x00F0) >> 4) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+133       \hyperlink{tetris_8c_a97513822cb79bcd590266957cd279292}{temp\_line}[3] = (\hyperlink{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}{tetriminos}[\hyperlink{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}{shape}][\hyperlink{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}{pattern}] & 0x000F) << (
+      \hyperlink{tetris_8c_a8a99281c65483bd7516835711079ecf1}{cur\_col} - 3);
+134    \}
+135 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 14
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 15
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{tetris_8c_abca4bf3dca1f8f7a997b8c0ccacbb963}\label{tetris_8c_abca4bf3dca1f8f7a997b8c0ccacbb963}} 
+\index{tetris.\+c@{tetris.\+c}!\+\_\+timer\+\_\+flag@{\+\_\+timer\+\_\+flag}}
+\index{\+\_\+timer\+\_\+flag@{\+\_\+timer\+\_\+flag}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+timer\+\_\+flag}{\_timer\_flag}}
+{\footnotesize\ttfamily unsigned char \+\_\+timer\+\_\+flag}
+
+
+
+tetris.\+c 파일의 7 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a415a47d48605e8663920d695a9a4251a}\label{tetris_8c_a415a47d48605e8663920d695a9a4251a}} 
+\index{tetris.\+c@{tetris.\+c}!adc@{adc}}
+\index{adc@{adc}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{adc}{adc}}
+{\footnotesize\ttfamily unsigned int adc\mbox{[}2\mbox{]}}
+
+
+
+tetris.\+c 파일의 47 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a5e25b037e0c4f44ea80058d66a7529e1}\label{tetris_8c_a5e25b037e0c4f44ea80058d66a7529e1}} 
+\index{tetris.\+c@{tetris.\+c}!Collision\+\_\+flag@{Collision\+\_\+flag}}
+\index{Collision\+\_\+flag@{Collision\+\_\+flag}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{Collision\+\_\+flag}{Collision\_flag}}
+{\footnotesize\ttfamily unsigned char Collision\+\_\+flag = 1}
+
+
+
+tetris.\+c 파일의 45 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a62e5b0cab34a72f7aae4310d6000abed}\label{tetris_8c_a62e5b0cab34a72f7aae4310d6000abed}} 
+\index{tetris.\+c@{tetris.\+c}!count@{count}}
+\index{count@{count}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily unsigned char count}
+
+
+
+tetris.\+c 파일의 8 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a8a99281c65483bd7516835711079ecf1}\label{tetris_8c_a8a99281c65483bd7516835711079ecf1}} 
+\index{tetris.\+c@{tetris.\+c}!cur\+\_\+col@{cur\+\_\+col}}
+\index{cur\+\_\+col@{cur\+\_\+col}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{cur\+\_\+col}{cur\_col}}
+{\footnotesize\ttfamily unsigned char cur\+\_\+col}
+
+
+
+tetris.\+c 파일의 38 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}\label{tetris_8c_abb21a2ebcb577edbad932a897afe40e0}} 
+\index{tetris.\+c@{tetris.\+c}!cur\+\_\+line@{cur\+\_\+line}}
+\index{cur\+\_\+line@{cur\+\_\+line}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{cur\+\_\+line}{cur\_line}}
+{\footnotesize\ttfamily unsigned char cur\+\_\+line}
+
+
+
+tetris.\+c 파일의 37 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_ab563c4c7faad8b2ba22fb0ded4d02ee1}\label{tetris_8c_ab563c4c7faad8b2ba22fb0ded4d02ee1}} 
+\index{tetris.\+c@{tetris.\+c}!delay@{delay}}
+\index{delay@{delay}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{delay}{delay}}
+{\footnotesize\ttfamily unsigned char delay = 250}
+
+
+
+tetris.\+c 파일의 49 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a62237d5bb1265d8dd6194b6d482c7dcf}\label{tetris_8c_a62237d5bb1265d8dd6194b6d482c7dcf}} 
+\index{tetris.\+c@{tetris.\+c}!dP@{dP}}
+\index{dP@{dP}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{dP}{dP}}
+{\footnotesize\ttfamily \hyperlink{dot__matrix_8h_a3d87b5fb5361b7577cb82734a97db15f}{dot\+\_\+matrix}$\ast$ dP}
+
+
+
+tetris.\+c 파일의 9 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_ac61a34f9c340a56962d27c7e3372674d}\label{tetris_8c_ac61a34f9c340a56962d27c7e3372674d}} 
+\index{tetris.\+c@{tetris.\+c}!end\+\_\+flag@{end\+\_\+flag}}
+\index{end\+\_\+flag@{end\+\_\+flag}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{end\+\_\+flag}{end\_flag}}
+{\footnotesize\ttfamily unsigned char end\+\_\+flag = 0}
+
+
+
+tetris.\+c 파일의 51 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}\label{tetris_8c_a20549a7bcd5a019416fd25a3c64fc977}} 
+\index{tetris.\+c@{tetris.\+c}!game\+\_\+board@{game\+\_\+board}}
+\index{game\+\_\+board@{game\+\_\+board}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{game\+\_\+board}{game\_board}}
+{\footnotesize\ttfamily unsigned short game\+\_\+board\mbox{[}17\mbox{]}}
+
+
+
+tetris.\+c 파일의 40 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_ad20ce888354be47960f1fbe60be9b197}\label{tetris_8c_ad20ce888354be47960f1fbe60be9b197}} 
+\index{tetris.\+c@{tetris.\+c}!green@{green}}
+\index{green@{green}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{green}{green}}
+{\footnotesize\ttfamily unsigned char green\mbox{[}16\mbox{]}}
+
+
+
+tetris.\+c 파일의 42 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a0d957bf1afecc6bd1ebcb451c7abe11d}\label{tetris_8c_a0d957bf1afecc6bd1ebcb451c7abe11d}} 
+\index{tetris.\+c@{tetris.\+c}!level@{level}}
+\index{level@{level}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily unsigned char level = 1}
+
+
+
+tetris.\+c 파일의 44 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a08c72d06034953df162b5cc6dd0e0360}\label{tetris_8c_a08c72d06034953df162b5cc6dd0e0360}} 
+\index{tetris.\+c@{tetris.\+c}!mux@{mux}}
+\index{mux@{mux}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{mux}{mux}}
+{\footnotesize\ttfamily unsigned char mux = 0}
+
+
+
+tetris.\+c 파일의 48 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_ac782b56188a1f8e4e0ae82fc32ad05ec}\label{tetris_8c_ac782b56188a1f8e4e0ae82fc32ad05ec}} 
+\index{tetris.\+c@{tetris.\+c}!pad\+\_\+count@{pad\+\_\+count}}
+\index{pad\+\_\+count@{pad\+\_\+count}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{pad\+\_\+count}{pad\_count}}
+{\footnotesize\ttfamily unsigned char pad\+\_\+count}
+
+
+
+tetris.\+c 파일의 8 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}\label{tetris_8c_a6bf409bee6116cda44d0765f4b6e4ec2}} 
+\index{tetris.\+c@{tetris.\+c}!pattern@{pattern}}
+\index{pattern@{pattern}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{pattern}{pattern}}
+{\footnotesize\ttfamily unsigned char pattern}
+
+
+
+tetris.\+c 파일의 36 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a44d0e445041ca51a492e04db487a33eb}\label{tetris_8c_a44d0e445041ca51a492e04db487a33eb}} 
+\index{tetris.\+c@{tetris.\+c}!red@{red}}
+\index{red@{red}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{red}{red}}
+{\footnotesize\ttfamily unsigned char red\mbox{[}16\mbox{]}}
+
+
+
+tetris.\+c 파일의 41 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a30e19b77a300782bfc76ddcc416f926e}\label{tetris_8c_a30e19b77a300782bfc76ddcc416f926e}} 
+\index{tetris.\+c@{tetris.\+c}!remove\+\_\+count@{remove\+\_\+count}}
+\index{remove\+\_\+count@{remove\+\_\+count}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{remove\+\_\+count}{remove\_count}}
+{\footnotesize\ttfamily unsigned char remove\+\_\+count = 0}
+
+
+
+tetris.\+c 파일의 50 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}\label{tetris_8c_a9d7f77334f11d266e824cb9b0ec6871e}} 
+\index{tetris.\+c@{tetris.\+c}!shape@{shape}}
+\index{shape@{shape}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{shape}{shape}}
+{\footnotesize\ttfamily unsigned char shape}
+
+
+
+tetris.\+c 파일의 35 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a97513822cb79bcd590266957cd279292}\label{tetris_8c_a97513822cb79bcd590266957cd279292}} 
+\index{tetris.\+c@{tetris.\+c}!temp\+\_\+line@{temp\+\_\+line}}
+\index{temp\+\_\+line@{temp\+\_\+line}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{temp\+\_\+line}{temp\_line}}
+{\footnotesize\ttfamily unsigned short temp\+\_\+line\mbox{[}4\mbox{]}}
+
+
+
+tetris.\+c 파일의 39 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}\label{tetris_8c_a6cb39100e17c8153db7d9cfe5999ab17}} 
+\index{tetris.\+c@{tetris.\+c}!tetriminos@{tetriminos}}
+\index{tetriminos@{tetriminos}!tetris.\+c@{tetris.\+c}}
+\subsubsection{\texorpdfstring{tetriminos}{tetriminos}}
+{\footnotesize\ttfamily unsigned short tetriminos\mbox{[}7\mbox{]}\mbox{[}4\mbox{]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}
+=
+\{
+   \{ 0x6600, 0x6600, 0x6600, 0x6600 \},    
+   \{ 0xF000, 0x4444, 0xF000, 0x4444 \},    
+   \{ 0x6C00, 0x8C40, 0x6C00, 0x8C40 \},    
+   \{ 0xC600, 0x4C80, 0xC600, 0x4C80 \},    
+   \{ 0xE400, 0x8C80, 0x4E00, 0x4C40 \},    
+   \{ 0x2E00, 0xC440, 0xE800, 0x88C0 \},    
+   \{ 0x8E00, 0x44C0, 0xE200, 0xC880 \},    
+
+\}
+\end{DoxyCode}
+
+
+tetris.\+c 파일의 23 번째 라인에서 정의되었습니다.
+

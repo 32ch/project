@@ -1,0 +1,1138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: tetris.c 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('tetris_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">매크로</a> &#124;
+<a href="#func-members">함수</a> &#124;
+<a href="#var-members">변수</a>  </div>
+  <div class="headertitle">
+<div class="title">tetris.c 파일 참조</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
+<code>#include &lt;util/delay.h&gt;</code><br />
+<code>#include &lt;avr/interrupt.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="dot__matrix_8h_source.html">dot_matrix.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+tetris.c에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c__incl.png" border="0" usemap="#tetris_8c" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div>
+<p><a href="tetris_8c_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:a437ef08681e7210d6678427030446a54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a437ef08681e7210d6678427030446a54">LEFT</a>&#160;&#160;&#160;75</td></tr>
+<tr class="separator:a437ef08681e7210d6678427030446a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80fb826a684cf3f0d306b22aa100ddac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a>&#160;&#160;&#160;77</td></tr>
+<tr class="separator:a80fb826a684cf3f0d306b22aa100ddac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1965eaca47dbf3f87acdafc2208f04eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a1965eaca47dbf3f87acdafc2208f04eb">UP</a>&#160;&#160;&#160;72</td></tr>
+<tr class="separator:a1965eaca47dbf3f87acdafc2208f04eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4193cd1c8c2e6ebd0e056fa2364a663f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a4193cd1c8c2e6ebd0e056fa2364a663f">DOWN</a>&#160;&#160;&#160;80</td></tr>
+<tr class="separator:a4193cd1c8c2e6ebd0e056fa2364a663f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8661ce774b9fc30c647d1bf4ccec7a14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a8661ce774b9fc30c647d1bf4ccec7a14">PAD_SENSITIVITY</a>&#160;&#160;&#160;30</td></tr>
+<tr class="separator:a8661ce774b9fc30c647d1bf4ccec7a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fbe54d91d53aabbbcec17706f6570ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a4fbe54d91d53aabbbcec17706f6570ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb02b736c0c917dc78a96516bf2aac2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a5fb02b736c0c917dc78a96516bf2aac2">PAD_Y</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a5fb02b736c0c917dc78a96516bf2aac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:a71750e3c93ffff30f20f22f036e566ed"><td class="memItemLeft" align="right" valign="top">signed char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a> (void)</td></tr>
+<tr class="separator:a71750e3c93ffff30f20f22f036e566ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f4c2dc71944a7a7a5a272dfce0e8d43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a2f4c2dc71944a7a7a5a272dfce0e8d43">drop</a> ()</td></tr>
+<tr class="separator:a2f4c2dc71944a7a7a5a272dfce0e8d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56c5cf8a568cff737ff95520cbe6b405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a56c5cf8a568cff737ff95520cbe6b405">draw</a> ()</td></tr>
+<tr class="separator:a56c5cf8a568cff737ff95520cbe6b405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc53888f8fafb142cbb1a9fbe33bf957"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#acc53888f8fafb142cbb1a9fbe33bf957">NewTetriminos</a> (void)</td></tr>
+<tr class="separator:acc53888f8fafb142cbb1a9fbe33bf957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af87828117d0582d0031f563933f97bfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#af87828117d0582d0031f563933f97bfd">spin</a> ()</td></tr>
+<tr class="separator:af87828117d0582d0031f563933f97bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ef6682140bf3f91bf3614b906b21c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#aa9ef6682140bf3f91bf3614b906b21c1">move</a> (int n)</td></tr>
+<tr class="separator:aa9ef6682140bf3f91bf3614b906b21c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fcb45e5d2428352eb36b487d1d4eea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a1fcb45e5d2428352eb36b487d1d4eea3">remove</a> ()</td></tr>
+<tr class="separator:a1fcb45e5d2428352eb36b487d1d4eea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad12852dedfdcba50139ad6ddb53bf54f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f">speed</a> (unsigned char <a class="el" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a>)</td></tr>
+<tr class="separator:ad12852dedfdcba50139ad6ddb53bf54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea150fcd685610cb9f7672fce361e53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#afea150fcd685610cb9f7672fce361e53">ISR</a> (INT0_vect)</td></tr>
+<tr class="separator:afea150fcd685610cb9f7672fce361e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2d7cdddfb682dcc0391e60cf42c7d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#add2d7cdddfb682dcc0391e60cf42c7d6">ISR</a> (TIMER0_OVF_vect)</td></tr>
+<tr class="separator:add2d7cdddfb682dcc0391e60cf42c7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c2e5b588ced1cd7312f5b0edc5b295"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a05c2e5b588ced1cd7312f5b0edc5b295">ISR</a> (ADC_vect)</td></tr>
+<tr class="separator:a05c2e5b588ced1cd7312f5b0edc5b295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+변수</h2></td></tr>
+<tr class="memitem:abca4bf3dca1f8f7a997b8c0ccacbb963"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#abca4bf3dca1f8f7a997b8c0ccacbb963">_timer_flag</a></td></tr>
+<tr class="separator:abca4bf3dca1f8f7a997b8c0ccacbb963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e5b0cab34a72f7aae4310d6000abed"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a62e5b0cab34a72f7aae4310d6000abed">count</a></td></tr>
+<tr class="separator:a62e5b0cab34a72f7aae4310d6000abed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac782b56188a1f8e4e0ae82fc32ad05ec"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">pad_count</a></td></tr>
+<tr class="separator:ac782b56188a1f8e4e0ae82fc32ad05ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62237d5bb1265d8dd6194b6d482c7dcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="dot__matrix_8h.html#a3d87b5fb5361b7577cb82734a97db15f">dot_matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a62237d5bb1265d8dd6194b6d482c7dcf">dP</a></td></tr>
+<tr class="separator:a62237d5bb1265d8dd6194b6d482c7dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb39100e17c8153db7d9cfe5999ab17"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a> [7][4]</td></tr>
+<tr class="separator:a6cb39100e17c8153db7d9cfe5999ab17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7f77334f11d266e824cb9b0ec6871e"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a></td></tr>
+<tr class="separator:a9d7f77334f11d266e824cb9b0ec6871e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bf409bee6116cda44d0765f4b6e4ec2"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a></td></tr>
+<tr class="separator:a6bf409bee6116cda44d0765f4b6e4ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb21a2ebcb577edbad932a897afe40e0"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a></td></tr>
+<tr class="separator:abb21a2ebcb577edbad932a897afe40e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a99281c65483bd7516835711079ecf1"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a></td></tr>
+<tr class="separator:a8a99281c65483bd7516835711079ecf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97513822cb79bcd590266957cd279292"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a> [4]</td></tr>
+<tr class="separator:a97513822cb79bcd590266957cd279292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20549a7bcd5a019416fd25a3c64fc977"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a> [17]</td></tr>
+<tr class="separator:a20549a7bcd5a019416fd25a3c64fc977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d0e445041ca51a492e04db487a33eb"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a> [16]</td></tr>
+<tr class="separator:a44d0e445041ca51a492e04db487a33eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20ce888354be47960f1fbe60be9b197"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#ad20ce888354be47960f1fbe60be9b197">green</a> [16]</td></tr>
+<tr class="separator:ad20ce888354be47960f1fbe60be9b197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d957bf1afecc6bd1ebcb451c7abe11d"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a> = 1</td></tr>
+<tr class="separator:a0d957bf1afecc6bd1ebcb451c7abe11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e25b037e0c4f44ea80058d66a7529e1"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a> = 1</td></tr>
+<tr class="separator:a5e25b037e0c4f44ea80058d66a7529e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a415a47d48605e8663920d695a9a4251a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a> [2]</td></tr>
+<tr class="separator:a415a47d48605e8663920d695a9a4251a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c72d06034953df162b5cc6dd0e0360"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">mux</a> = 0</td></tr>
+<tr class="separator:a08c72d06034953df162b5cc6dd0e0360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab563c4c7faad8b2ba22fb0ded4d02ee1"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 250</td></tr>
+<tr class="separator:ab563c4c7faad8b2ba22fb0ded4d02ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30e19b77a300782bfc76ddcc416f926e"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">remove_count</a> = 0</td></tr>
+<tr class="separator:a30e19b77a300782bfc76ddcc416f926e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac61a34f9c340a56962d27c7e3372674d"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a> = 0</td></tr>
+<tr class="separator:ac61a34f9c340a56962d27c7e3372674d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="a4193cd1c8c2e6ebd0e056fa2364a663f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4193cd1c8c2e6ebd0e056fa2364a663f">&#9670;&nbsp;</a></span>DOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOWN&#160;&#160;&#160;80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00015">15</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a437ef08681e7210d6678427030446a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a437ef08681e7210d6678427030446a54">&#9670;&nbsp;</a></span>LEFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEFT&#160;&#160;&#160;75</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00012">12</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a8661ce774b9fc30c647d1bf4ccec7a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8661ce774b9fc30c647d1bf4ccec7a14">&#9670;&nbsp;</a></span>PAD_SENSITIVITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PAD_SENSITIVITY&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00018">18</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a4fbe54d91d53aabbbcec17706f6570ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fbe54d91d53aabbbcec17706f6570ed">&#9670;&nbsp;</a></span>PAD_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PAD_X&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00019">19</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5fb02b736c0c917dc78a96516bf2aac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb02b736c0c917dc78a96516bf2aac2">&#9670;&nbsp;</a></span>PAD_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PAD_Y&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00020">20</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a80fb826a684cf3f0d306b22aa100ddac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80fb826a684cf3f0d306b22aa100ddac">&#9670;&nbsp;</a></span>RIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RIGHT&#160;&#160;&#160;77</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00013">13</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a1965eaca47dbf3f87acdafc2208f04eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1965eaca47dbf3f87acdafc2208f04eb">&#9670;&nbsp;</a></span>UP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UP&#160;&#160;&#160;72</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00014">14</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="a71750e3c93ffff30f20f22f036e566ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71750e3c93ffff30f20f22f036e566ed">&#9670;&nbsp;</a></span>Collision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">signed char Collision </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00054">54</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <span class="keywordflow">if</span> (((<a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>] &amp; <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0]) != 0) | ((<a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 1] &amp; temp_line[1]) != 0) |</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      ((<a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 2] &amp; temp_line[2]) != 0) | ((<a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 3] &amp; temp_line[3]) != 0))</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">return</span> -1;         <span class="comment">// �浹</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="keywordflow">else</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keywordflow">return</span> 0;  <span class="comment">// �浹 ����</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div><div class="ttc" id="tetris_8c_html_abb21a2ebcb577edbad932a897afe40e0"><div class="ttname"><a href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a></div><div class="ttdeci">unsigned char cur_line</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00037">tetris.c:37</a></div></div>
+<div class="ttc" id="tetris_8c_html_a97513822cb79bcd590266957cd279292"><div class="ttname"><a href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a></div><div class="ttdeci">unsigned short temp_line[4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00039">tetris.c:39</a></div></div>
+<div class="ttc" id="tetris_8c_html_a20549a7bcd5a019416fd25a3c64fc977"><div class="ttname"><a href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a></div><div class="ttdeci">unsigned short game_board[17]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00040">tetris.c:40</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_a71750e3c93ffff30f20f22f036e566ed_icgraph.png" border="0" usemap="#tetris_8c_a71750e3c93ffff30f20f22f036e566ed_icgraph" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+
+</div>
+</div>
+<a id="a56c5cf8a568cff737ff95520cbe6b405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c5cf8a568cff737ff95520cbe6b405">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00079">79</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;   <span class="keywordflow">for</span> (i = 0; i &lt; 16; i++)</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;   {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[i] = 0x00;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <a class="code" href="tetris_8c.html#ad20ce888354be47960f1fbe60be9b197">green</a>[i] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[i] &gt;&gt; 4;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   }</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>] = <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>] | (<a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] &gt;&gt; 4);</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 1] = <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 1] | (<a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] &gt;&gt; 4);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 2] = <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 2] | (<a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] &gt;&gt; 4);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 3] = <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 3] | (<a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] &gt;&gt; 4);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div><div class="ttc" id="tetris_8c_html_abb21a2ebcb577edbad932a897afe40e0"><div class="ttname"><a href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a></div><div class="ttdeci">unsigned char cur_line</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00037">tetris.c:37</a></div></div>
+<div class="ttc" id="tetris_8c_html_ad20ce888354be47960f1fbe60be9b197"><div class="ttname"><a href="tetris_8c.html#ad20ce888354be47960f1fbe60be9b197">green</a></div><div class="ttdeci">unsigned char green[16]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00042">tetris.c:42</a></div></div>
+<div class="ttc" id="tetris_8c_html_a44d0e445041ca51a492e04db487a33eb"><div class="ttname"><a href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a></div><div class="ttdeci">unsigned char red[16]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00041">tetris.c:41</a></div></div>
+<div class="ttc" id="tetris_8c_html_a97513822cb79bcd590266957cd279292"><div class="ttname"><a href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a></div><div class="ttdeci">unsigned short temp_line[4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00039">tetris.c:39</a></div></div>
+<div class="ttc" id="tetris_8c_html_a20549a7bcd5a019416fd25a3c64fc977"><div class="ttname"><a href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a></div><div class="ttdeci">unsigned short game_board[17]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00040">tetris.c:40</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_a56c5cf8a568cff737ff95520cbe6b405_icgraph.png" border="0" usemap="#tetris_8c_a56c5cf8a568cff737ff95520cbe6b405_icgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+
+</div>
+</div>
+<a id="a2f4c2dc71944a7a7a5a272dfce0e8d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f4c2dc71944a7a7a5a272dfce0e8d43">&#9670;&nbsp;</a></span>drop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00063">63</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>++;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>() == -1)</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>--;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a>] | <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0];</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 1] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 1] | <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1];</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 2] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 2] | <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2];</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 3] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[<a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> + 3] | <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3];</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <a class="code" href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a> = 1;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;   }</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div><div class="ttc" id="tetris_8c_html_a71750e3c93ffff30f20f22f036e566ed"><div class="ttname"><a href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a></div><div class="ttdeci">signed char Collision(void)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00054">tetris.c:54</a></div></div>
+<div class="ttc" id="tetris_8c_html_abb21a2ebcb577edbad932a897afe40e0"><div class="ttname"><a href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a></div><div class="ttdeci">unsigned char cur_line</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00037">tetris.c:37</a></div></div>
+<div class="ttc" id="tetris_8c_html_a97513822cb79bcd590266957cd279292"><div class="ttname"><a href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a></div><div class="ttdeci">unsigned short temp_line[4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00039">tetris.c:39</a></div></div>
+<div class="ttc" id="tetris_8c_html_a5e25b037e0c4f44ea80058d66a7529e1"><div class="ttname"><a href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a></div><div class="ttdeci">unsigned char Collision_flag</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00045">tetris.c:45</a></div></div>
+<div class="ttc" id="tetris_8c_html_a20549a7bcd5a019416fd25a3c64fc977"><div class="ttname"><a href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a></div><div class="ttdeci">unsigned short game_board[17]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00040">tetris.c:40</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_a2f4c2dc71944a7a7a5a272dfce0e8d43_cgraph.png" border="0" usemap="#tetris_8c_a2f4c2dc71944a7a7a5a272dfce0e8d43_cgraph" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_a2f4c2dc71944a7a7a5a272dfce0e8d43_icgraph.png" border="0" usemap="#tetris_8c_a2f4c2dc71944a7a7a5a272dfce0e8d43_icgraph" alt=""/></div>
+<!-- MAP 4 -->
+</div>
+
+</div>
+</div>
+<a id="afea150fcd685610cb9f7672fce361e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea150fcd685610cb9f7672fce361e53">&#9670;&nbsp;</a></span>ISR() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISR </td>
+          <td>(</td>
+          <td class="paramtype">INT0_vect&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00288">288</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;   <a class="code" href="tetris_8c.html#af87828117d0582d0031f563933f97bfd">spin</a>();</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div><div class="ttc" id="tetris_8c_html_af87828117d0582d0031f563933f97bfd"><div class="ttname"><a href="tetris_8c.html#af87828117d0582d0031f563933f97bfd">spin</a></div><div class="ttdeci">void spin()</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00116">tetris.c:116</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_afea150fcd685610cb9f7672fce361e53_cgraph.png" border="0" usemap="#tetris_8c_afea150fcd685610cb9f7672fce361e53_cgraph" alt=""/></div>
+<!-- MAP 5 -->
+</div>
+
+</div>
+</div>
+<a id="add2d7cdddfb682dcc0391e60cf42c7d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add2d7cdddfb682dcc0391e60cf42c7d6">&#9670;&nbsp;</a></span>ISR() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISR </td>
+          <td>(</td>
+          <td class="paramtype">TIMER0_OVF_vect&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00293">293</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                     {</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;   <a class="code" href="tetris_8c.html#a62e5b0cab34a72f7aae4310d6000abed">count</a>++;</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;   <a class="code" href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">pad_count</a>++;</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;   TCNT0 = 6;</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">pad_count</a> == <a class="code" href="tetris_8c.html#a8661ce774b9fc30c647d1bf4ccec7a14">PAD_SENSITIVITY</a>)</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;   {</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[0]&gt;500)   <span class="comment">//����       {
+         move(LEFT);
+         //pad_value = LEFT;
+      }
+      else if (adc[0]&lt;300)  //������
+      {
+         move(RIGHT);
+      }
+      if (adc[1]&lt;300)       //�Ʒ�
+         delay = 30;
+      //   else if(adc[1]&gt;500)
+      //      move(UP);
+      else
+         speed(level);
+      pad_count = 0;
+   }
+   if (count == delay) {
+      drop();
+      count = 0;
+   }
+}
+</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      {</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;         <a class="code" href="tetris_8c.html#aa9ef6682140bf3f91bf3614b906b21c1">move</a>(<a class="code" href="tetris_8c.html#a437ef08681e7210d6678427030446a54">LEFT</a>);</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;         <span class="comment">//pad_value = LEFT;</span></div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      }</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[0]&lt;300)  <span class="comment">//������</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      {</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;         <a class="code" href="tetris_8c.html#aa9ef6682140bf3f91bf3614b906b21c1">move</a>(<a class="code" href="tetris_8c.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a>);</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      }</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[1]&lt;300)       <span class="comment">//�Ʒ�</span></div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;         <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 30;</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      <span class="comment">//   else if(adc[1]&gt;500)</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      <span class="comment">//      move(UP);</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      <span class="keywordflow">else</span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;         <a class="code" href="tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f">speed</a>(<a class="code" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a>);</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      <a class="code" href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">pad_count</a> = 0;</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;   }</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a62e5b0cab34a72f7aae4310d6000abed">count</a> == <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a>) {</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;      <a class="code" href="tetris_8c.html#a2f4c2dc71944a7a7a5a272dfce0e8d43">drop</a>();</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      <a class="code" href="tetris_8c.html#a62e5b0cab34a72f7aae4310d6000abed">count</a> = 0;</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;   }</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div><div class="ttc" id="tetris_8c_html_aa9ef6682140bf3f91bf3614b906b21c1"><div class="ttname"><a href="tetris_8c.html#aa9ef6682140bf3f91bf3614b906b21c1">move</a></div><div class="ttdeci">void move(int n)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00138">tetris.c:138</a></div></div>
+<div class="ttc" id="tetris_8c_html_a62e5b0cab34a72f7aae4310d6000abed"><div class="ttname"><a href="tetris_8c.html#a62e5b0cab34a72f7aae4310d6000abed">count</a></div><div class="ttdeci">unsigned char count</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00008">tetris.c:8</a></div></div>
+<div class="ttc" id="tetris_8c_html_a0d957bf1afecc6bd1ebcb451c7abe11d"><div class="ttname"><a href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a></div><div class="ttdeci">unsigned char level</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00044">tetris.c:44</a></div></div>
+<div class="ttc" id="tetris_8c_html_ad12852dedfdcba50139ad6ddb53bf54f"><div class="ttname"><a href="tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f">speed</a></div><div class="ttdeci">void speed(unsigned char level)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00209">tetris.c:209</a></div></div>
+<div class="ttc" id="tetris_8c_html_ac782b56188a1f8e4e0ae82fc32ad05ec"><div class="ttname"><a href="tetris_8c.html#ac782b56188a1f8e4e0ae82fc32ad05ec">pad_count</a></div><div class="ttdeci">unsigned char pad_count</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00008">tetris.c:8</a></div></div>
+<div class="ttc" id="tetris_8c_html_a437ef08681e7210d6678427030446a54"><div class="ttname"><a href="tetris_8c.html#a437ef08681e7210d6678427030446a54">LEFT</a></div><div class="ttdeci">#define LEFT</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00012">tetris.c:12</a></div></div>
+<div class="ttc" id="tetris_8c_html_a80fb826a684cf3f0d306b22aa100ddac"><div class="ttname"><a href="tetris_8c.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a></div><div class="ttdeci">#define RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00013">tetris.c:13</a></div></div>
+<div class="ttc" id="tetris_8c_html_a2f4c2dc71944a7a7a5a272dfce0e8d43"><div class="ttname"><a href="tetris_8c.html#a2f4c2dc71944a7a7a5a272dfce0e8d43">drop</a></div><div class="ttdeci">void drop()</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00063">tetris.c:63</a></div></div>
+<div class="ttc" id="tetris_8c_html_a8661ce774b9fc30c647d1bf4ccec7a14"><div class="ttname"><a href="tetris_8c.html#a8661ce774b9fc30c647d1bf4ccec7a14">PAD_SENSITIVITY</a></div><div class="ttdeci">#define PAD_SENSITIVITY</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00018">tetris.c:18</a></div></div>
+<div class="ttc" id="tetris_8c_html_ab563c4c7faad8b2ba22fb0ded4d02ee1"><div class="ttname"><a href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a></div><div class="ttdeci">unsigned char delay</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00049">tetris.c:49</a></div></div>
+<div class="ttc" id="tetris_8c_html_a415a47d48605e8663920d695a9a4251a"><div class="ttname"><a href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a></div><div class="ttdeci">unsigned int adc[2]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00047">tetris.c:47</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_add2d7cdddfb682dcc0391e60cf42c7d6_cgraph.png" border="0" usemap="#tetris_8c_add2d7cdddfb682dcc0391e60cf42c7d6_cgraph" alt=""/></div>
+<!-- MAP 6 -->
+</div>
+
+</div>
+</div>
+<a id="a05c2e5b588ced1cd7312f5b0edc5b295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05c2e5b588ced1cd7312f5b0edc5b295">&#9670;&nbsp;</a></span>ISR() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISR </td>
+          <td>(</td>
+          <td class="paramtype">ADC_vect&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00323">323</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;{</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">mux</a> == <a class="code" href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a>)</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;   {</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;      <a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[<a class="code" href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a>] = ADC;</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;      ADMUX = 0x40 | <a class="code" href="tetris_8c.html#a5fb02b736c0c917dc78a96516bf2aac2">PAD_Y</a>;</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;      <a class="code" href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">mux</a> = <a class="code" href="tetris_8c.html#a5fb02b736c0c917dc78a96516bf2aac2">PAD_Y</a>;</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;   }</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;   <span class="keywordflow">else</span></div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;   {</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;      <a class="code" href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a>[<a class="code" href="tetris_8c.html#a5fb02b736c0c917dc78a96516bf2aac2">PAD_Y</a>] = ADC;</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;      ADMUX = 0x40 | <a class="code" href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a>;</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;      <a class="code" href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">mux</a> = <a class="code" href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a>;</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;   }</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div><div class="ttc" id="tetris_8c_html_a5fb02b736c0c917dc78a96516bf2aac2"><div class="ttname"><a href="tetris_8c.html#a5fb02b736c0c917dc78a96516bf2aac2">PAD_Y</a></div><div class="ttdeci">#define PAD_Y</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00020">tetris.c:20</a></div></div>
+<div class="ttc" id="tetris_8c_html_a4fbe54d91d53aabbbcec17706f6570ed"><div class="ttname"><a href="tetris_8c.html#a4fbe54d91d53aabbbcec17706f6570ed">PAD_X</a></div><div class="ttdeci">#define PAD_X</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00019">tetris.c:19</a></div></div>
+<div class="ttc" id="tetris_8c_html_a08c72d06034953df162b5cc6dd0e0360"><div class="ttname"><a href="tetris_8c.html#a08c72d06034953df162b5cc6dd0e0360">mux</a></div><div class="ttdeci">unsigned char mux</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00048">tetris.c:48</a></div></div>
+<div class="ttc" id="tetris_8c_html_a415a47d48605e8663920d695a9a4251a"><div class="ttname"><a href="tetris_8c.html#a415a47d48605e8663920d695a9a4251a">adc</a></div><div class="ttdeci">unsigned int adc[2]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00047">tetris.c:47</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00233">233</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;   DDRB = 0xff;</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;   DDRC = 0xff;</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;   PORTB = 0x00;</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;   PORTC = 0x00;</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;   <span class="keywordtype">int</span> i = 0;</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;   <span class="keywordflow">for</span> (i = 0; i &lt; 20; i++)</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[i] = 0x700E;   <span class="comment">// 0111000000001110</span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;   <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[16] = 0xFFFF;</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;   <a class="code" href="struct__dot__matrix.html">dot_matrix</a> dot_show;         <span class="comment">//��Ʈ ��Ʈ���� ����ü ���� 
+   dot_show.row = Dot_portSet(&amp;PORTB, 0);       //�� ��Ʈ, ���� �ɹ�ȣ ����
+   dot_show.col = Dot_portSet(&amp;PORTC, 0);       //�� ��Ʈ, ���� �ɹ�ȣ ����
+   dot_show.greenPtr.all = green;               //�ʷϻ� ����� �迭 ������ ����
+   dot_show.redPtr.all = red;                   //������ ����� �迭 ������ ����
+   Dot_init(&amp;dot_show);                         //��Ʈ��Ʈ���� �ʱ�ȭ
+
+    //���ͷ�Ʈ ����
+   EIMSK = 0x03;
+   EICRA = 0b0000001010;
+
+    //ADC(Pad) ��Ʈ �ʱ�ȭ
+   ADMUX = 0x40;
+   ADCSRA = 0b11101111;
+
+    //Ÿ�̸� �ʱ�ȭ
+   TIMSK = 1;
+   TCCR0 = 6;
+   TCNT0 = 6;
+   SREG = 0x80;
+
+    //���� �õ� ����
+   _delay_ms(5);
+   srand(ADC);
+   while (1)
+   {
+      if (Collision_flag == 1)
+         NewTetriminos();
+
+      if (end_flag == 1)
+      {
+         Dot_disp(OFF);
+         break;
+      }
+
+
+      draw();
+      Dot_disp(ALL);
+      remove();
+   }
+}
+</span></div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;   dot_show.<a class="code" href="struct__dot__matrix.html#a549cd7f99fcdc1c15298e7a72ed1833e">row</a> = <a class="code" href="dot__matrix_8c.html#aeb9b4954ea6a435d377cdab117fbac3f">Dot_portSet</a>(&amp;PORTB, 0);       <span class="comment">//�� ��Ʈ, ���� �ɹ�ȣ ����</span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;   dot_show.<a class="code" href="struct__dot__matrix.html#a1ecc29bd3129a1772dc2497b384c71ec">col</a> = <a class="code" href="dot__matrix_8c.html#aeb9b4954ea6a435d377cdab117fbac3f">Dot_portSet</a>(&amp;PORTC, 0);       <span class="comment">//�� ��Ʈ, ���� �ɹ�ȣ ����</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;   dot_show.<a class="code" href="struct__dot__matrix.html#ae24a27965d4b51bdc8068bc7a445ed68">greenPtr</a>.<a class="code" href="union__matrix__pointer.html#a0e01cbf81d0496d1344177fe4d90c385">all</a> = <a class="code" href="tetris_8c.html#ad20ce888354be47960f1fbe60be9b197">green</a>;               <span class="comment">//�ʷϻ� ����� �迭 ������ ����</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;   dot_show.<a class="code" href="struct__dot__matrix.html#a1a5469905d186f7dd9479561eb9ae6e2">redPtr</a>.<a class="code" href="union__matrix__pointer.html#a0e01cbf81d0496d1344177fe4d90c385">all</a> = <a class="code" href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a>;                   <span class="comment">//������ ����� �迭 ������ ����</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;   <a class="code" href="dot__matrix_8c.html#a857f3c97866ae6ab3ce77f2964c0c382">Dot_init</a>(&amp;dot_show);                         <span class="comment">//��Ʈ��Ʈ���� �ʱ�ȭ</span></div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">//���ͷ�Ʈ ����    EIMSK = 0x03;
+   EICRA = 0b0000001010;
+
+    //ADC(Pad) ��Ʈ �ʱ�ȭ
+   ADMUX = 0x40;
+   ADCSRA = 0b11101111;
+
+    //Ÿ�̸� �ʱ�ȭ
+   TIMSK = 1;
+   TCCR0 = 6;
+   TCNT0 = 6;
+   SREG = 0x80;
+
+    //���� �õ� ����
+   _delay_ms(5);
+   srand(ADC);
+   while (1)
+   {
+      if (Collision_flag == 1)
+         NewTetriminos();
+
+      if (end_flag == 1)
+      {
+         Dot_disp(OFF);
+         break;
+      }
+
+
+      draw();
+      Dot_disp(ALL);
+      remove();
+   }
+}
+</span></div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;   EIMSK = 0x03;</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;   EICRA = 0b0000001010;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">//ADC(Pad) ��Ʈ �ʱ�ȭ</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;   ADMUX = 0x40;</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;   ADCSRA = 0b11101111;</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">//Ÿ�̸� �ʱ�ȭ</span></div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;   TIMSK = 1;</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;   TCCR0 = 6;</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;   TCNT0 = 6;</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;   SREG = 0x80;</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="comment">//���� �õ� ����</span></div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;   _delay_ms(5);</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;   srand(ADC);</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;   <span class="keywordflow">while</span> (1)</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;   {</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a> == 1)</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;         <a class="code" href="tetris_8c.html#acc53888f8fafb142cbb1a9fbe33bf957">NewTetriminos</a>();</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a> == 1)</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      {</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;         <a class="code" href="dot__matrix_8c.html#a3b9b4c65b72b422e214de913df281cfe">Dot_disp</a>(<a class="code" href="dot__matrix_8h.html#a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75">OFF</a>);</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;         <span class="keywordflow">break</span>;</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      }</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <a class="code" href="tetris_8c.html#a56c5cf8a568cff737ff95520cbe6b405">draw</a>();</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      <a class="code" href="dot__matrix_8c.html#a3b9b4c65b72b422e214de913df281cfe">Dot_disp</a>(<a class="code" href="dot__matrix_8h.html#a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a">ALL</a>);</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      <span class="keyword">remove</span>();</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;   }</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div><div class="ttc" id="struct__dot__matrix_html"><div class="ttname"><a href="struct__dot__matrix.html">_dot_matrix</a></div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00058">dot_matrix.h:58</a></div></div>
+<div class="ttc" id="dot__matrix_8c_html_aeb9b4954ea6a435d377cdab117fbac3f"><div class="ttname"><a href="dot__matrix_8c.html#aeb9b4954ea6a435d377cdab117fbac3f">Dot_portSet</a></div><div class="ttdeci">dot_port Dot_portSet(uint8_t *port, unsigned char pNum)</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8c_source.html#l00056">dot_matrix.c:56</a></div></div>
+<div class="ttc" id="struct__dot__matrix_html_a1a5469905d186f7dd9479561eb9ae6e2"><div class="ttname"><a href="struct__dot__matrix.html#a1a5469905d186f7dd9479561eb9ae6e2">_dot_matrix::redPtr</a></div><div class="ttdeci">matrix_pointer redPtr</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00062">dot_matrix.h:62</a></div></div>
+<div class="ttc" id="dot__matrix_8c_html_a3b9b4c65b72b422e214de913df281cfe"><div class="ttname"><a href="dot__matrix_8c.html#a3b9b4c65b72b422e214de913df281cfe">Dot_disp</a></div><div class="ttdeci">void Dot_disp(disp_state state)</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8c_source.html#l00022">dot_matrix.c:22</a></div></div>
+<div class="ttc" id="tetris_8c_html_ac61a34f9c340a56962d27c7e3372674d"><div class="ttname"><a href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a></div><div class="ttdeci">unsigned char end_flag</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00051">tetris.c:51</a></div></div>
+<div class="ttc" id="tetris_8c_html_ad20ce888354be47960f1fbe60be9b197"><div class="ttname"><a href="tetris_8c.html#ad20ce888354be47960f1fbe60be9b197">green</a></div><div class="ttdeci">unsigned char green[16]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00042">tetris.c:42</a></div></div>
+<div class="ttc" id="tetris_8c_html_a44d0e445041ca51a492e04db487a33eb"><div class="ttname"><a href="tetris_8c.html#a44d0e445041ca51a492e04db487a33eb">red</a></div><div class="ttdeci">unsigned char red[16]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00041">tetris.c:41</a></div></div>
+<div class="ttc" id="dot__matrix_8h_html_a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75"><div class="ttname"><a href="dot__matrix_8h.html#a4afe4c5b8415cc3ca4ef72505d475e0faac132f2982b98bcaa3445e535a03ff75">OFF</a></div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00068">dot_matrix.h:68</a></div></div>
+<div class="ttc" id="dot__matrix_8h_html_a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a"><div class="ttname"><a href="dot__matrix_8h.html#a4afe4c5b8415cc3ca4ef72505d475e0fab1d5eac4b1dca480c8056eaea7663b7a">ALL</a></div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00073">dot_matrix.h:73</a></div></div>
+<div class="ttc" id="dot__matrix_8c_html_a857f3c97866ae6ab3ce77f2964c0c382"><div class="ttname"><a href="dot__matrix_8c.html#a857f3c97866ae6ab3ce77f2964c0c382">Dot_init</a></div><div class="ttdeci">void Dot_init(dot_matrix *init)</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8c_source.html#l00016">dot_matrix.c:16</a></div></div>
+<div class="ttc" id="tetris_8c_html_acc53888f8fafb142cbb1a9fbe33bf957"><div class="ttname"><a href="tetris_8c.html#acc53888f8fafb142cbb1a9fbe33bf957">NewTetriminos</a></div><div class="ttdeci">void NewTetriminos(void)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00095">tetris.c:95</a></div></div>
+<div class="ttc" id="struct__dot__matrix_html_a1ecc29bd3129a1772dc2497b384c71ec"><div class="ttname"><a href="struct__dot__matrix.html#a1ecc29bd3129a1772dc2497b384c71ec">_dot_matrix::col</a></div><div class="ttdeci">dot_port col</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00061">dot_matrix.h:61</a></div></div>
+<div class="ttc" id="union__matrix__pointer_html_a0e01cbf81d0496d1344177fe4d90c385"><div class="ttname"><a href="union__matrix__pointer.html#a0e01cbf81d0496d1344177fe4d90c385">_matrix_pointer::all</a></div><div class="ttdeci">uint8_t * all</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00044">dot_matrix.h:44</a></div></div>
+<div class="ttc" id="struct__dot__matrix_html_a549cd7f99fcdc1c15298e7a72ed1833e"><div class="ttname"><a href="struct__dot__matrix.html#a549cd7f99fcdc1c15298e7a72ed1833e">_dot_matrix::row</a></div><div class="ttdeci">dot_port row</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00060">dot_matrix.h:60</a></div></div>
+<div class="ttc" id="tetris_8c_html_a56c5cf8a568cff737ff95520cbe6b405"><div class="ttname"><a href="tetris_8c.html#a56c5cf8a568cff737ff95520cbe6b405">draw</a></div><div class="ttdeci">void draw()</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00079">tetris.c:79</a></div></div>
+<div class="ttc" id="struct__dot__matrix_html_ae24a27965d4b51bdc8068bc7a445ed68"><div class="ttname"><a href="struct__dot__matrix.html#ae24a27965d4b51bdc8068bc7a445ed68">_dot_matrix::greenPtr</a></div><div class="ttdeci">matrix_pointer greenPtr</div><div class="ttdef"><b>Definition:</b> <a href="dot__matrix_8h_source.html#l00063">dot_matrix.h:63</a></div></div>
+<div class="ttc" id="tetris_8c_html_a5e25b037e0c4f44ea80058d66a7529e1"><div class="ttname"><a href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a></div><div class="ttdeci">unsigned char Collision_flag</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00045">tetris.c:45</a></div></div>
+<div class="ttc" id="tetris_8c_html_a20549a7bcd5a019416fd25a3c64fc977"><div class="ttname"><a href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a></div><div class="ttdeci">unsigned short game_board[17]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00040">tetris.c:40</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#tetris_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<!-- MAP 7 -->
+</div>
+
+</div>
+</div>
+<a id="aa9ef6682140bf3f91bf3614b906b21c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ef6682140bf3f91bf3614b906b21c1">&#9670;&nbsp;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void move </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00138">138</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;   <span class="keywordflow">switch</span> (n) {</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;   <span class="keywordflow">case</span> 0:</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="tetris_8c.html#a437ef08681e7210d6678427030446a54">LEFT</a>: <span class="comment">//����Ű �������� </span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a>++;</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>() == -1)</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      {</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;         <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a>--;</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      }</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordflow">break</span>;                     <span class="comment">//�������� �� �� �ִ��� üũ �� �����ϸ� �̵�</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="tetris_8c.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a>: <span class="comment">//������ ����Ű ��������- ���� �����ϰ� ó���� </span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a>--;</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>() == -1)</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      {</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;         <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a>++;</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;         <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      }</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="tetris_8c.html#a4193cd1c8c2e6ebd0e056fa2364a663f">DOWN</a>: <span class="comment">//�Ʒ��� ����Ű ��������-���� �����ϰ� ó���� </span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="comment">//      delay = 0;</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="tetris_8c.html#a1965eaca47dbf3f87acdafc2208f04eb">UP</a>: <span class="comment">//���� ����Ű �������� </span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <a class="code" href="tetris_8c.html#af87828117d0582d0031f563933f97bfd">spin</a>();</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <span class="comment">//ȸ���� �� �ִ��� üũ �� �����ϸ� ȸ��</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;   }</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div><div class="ttc" id="tetris_8c_html_a6bf409bee6116cda44d0765f4b6e4ec2"><div class="ttname"><a href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a></div><div class="ttdeci">unsigned char pattern</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00036">tetris.c:36</a></div></div>
+<div class="ttc" id="tetris_8c_html_a71750e3c93ffff30f20f22f036e566ed"><div class="ttname"><a href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a></div><div class="ttdeci">signed char Collision(void)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00054">tetris.c:54</a></div></div>
+<div class="ttc" id="tetris_8c_html_a6cb39100e17c8153db7d9cfe5999ab17"><div class="ttname"><a href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a></div><div class="ttdeci">unsigned short tetriminos[7][4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00023">tetris.c:23</a></div></div>
+<div class="ttc" id="tetris_8c_html_a9d7f77334f11d266e824cb9b0ec6871e"><div class="ttname"><a href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a></div><div class="ttdeci">unsigned char shape</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00035">tetris.c:35</a></div></div>
+<div class="ttc" id="tetris_8c_html_a4193cd1c8c2e6ebd0e056fa2364a663f"><div class="ttname"><a href="tetris_8c.html#a4193cd1c8c2e6ebd0e056fa2364a663f">DOWN</a></div><div class="ttdeci">#define DOWN</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00015">tetris.c:15</a></div></div>
+<div class="ttc" id="tetris_8c_html_a437ef08681e7210d6678427030446a54"><div class="ttname"><a href="tetris_8c.html#a437ef08681e7210d6678427030446a54">LEFT</a></div><div class="ttdeci">#define LEFT</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00012">tetris.c:12</a></div></div>
+<div class="ttc" id="tetris_8c_html_a1965eaca47dbf3f87acdafc2208f04eb"><div class="ttname"><a href="tetris_8c.html#a1965eaca47dbf3f87acdafc2208f04eb">UP</a></div><div class="ttdeci">#define UP</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00014">tetris.c:14</a></div></div>
+<div class="ttc" id="tetris_8c_html_a97513822cb79bcd590266957cd279292"><div class="ttname"><a href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a></div><div class="ttdeci">unsigned short temp_line[4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00039">tetris.c:39</a></div></div>
+<div class="ttc" id="tetris_8c_html_a80fb826a684cf3f0d306b22aa100ddac"><div class="ttname"><a href="tetris_8c.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a></div><div class="ttdeci">#define RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00013">tetris.c:13</a></div></div>
+<div class="ttc" id="tetris_8c_html_a8a99281c65483bd7516835711079ecf1"><div class="ttname"><a href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a></div><div class="ttdeci">unsigned char cur_col</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00038">tetris.c:38</a></div></div>
+<div class="ttc" id="tetris_8c_html_af87828117d0582d0031f563933f97bfd"><div class="ttname"><a href="tetris_8c.html#af87828117d0582d0031f563933f97bfd">spin</a></div><div class="ttdeci">void spin()</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00116">tetris.c:116</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_aa9ef6682140bf3f91bf3614b906b21c1_cgraph.png" border="0" usemap="#tetris_8c_aa9ef6682140bf3f91bf3614b906b21c1_cgraph" alt=""/></div>
+<!-- MAP 8 -->
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_aa9ef6682140bf3f91bf3614b906b21c1_icgraph.png" border="0" usemap="#tetris_8c_aa9ef6682140bf3f91bf3614b906b21c1_icgraph" alt=""/></div>
+<!-- MAP 9 -->
+</div>
+
+</div>
+</div>
+<a id="acc53888f8fafb142cbb1a9fbe33bf957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc53888f8fafb142cbb1a9fbe33bf957">&#9670;&nbsp;</a></span>NewTetriminos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NewTetriminos </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00095">95</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   <a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a> = rand() % 7;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;   <span class="comment">//   shape = (count % 7);</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   <span class="comment">//   shape = (ADC%7);</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   <a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a> = 0;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 6;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 2;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &lt;&lt; 2;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; 6;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;   <a class="code" href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a> = 0;                 <span class="comment">// ��Ʈ���̳뽺 ���� ���� (�ֻ��� ����)</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;   <a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> = 9;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;   <a class="code" href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a> = 0;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>() == -1)</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <a class="code" href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a> = 1;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div><div class="ttc" id="tetris_8c_html_a6bf409bee6116cda44d0765f4b6e4ec2"><div class="ttname"><a href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a></div><div class="ttdeci">unsigned char pattern</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00036">tetris.c:36</a></div></div>
+<div class="ttc" id="tetris_8c_html_a71750e3c93ffff30f20f22f036e566ed"><div class="ttname"><a href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a></div><div class="ttdeci">signed char Collision(void)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00054">tetris.c:54</a></div></div>
+<div class="ttc" id="tetris_8c_html_abb21a2ebcb577edbad932a897afe40e0"><div class="ttname"><a href="tetris_8c.html#abb21a2ebcb577edbad932a897afe40e0">cur_line</a></div><div class="ttdeci">unsigned char cur_line</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00037">tetris.c:37</a></div></div>
+<div class="ttc" id="tetris_8c_html_ac61a34f9c340a56962d27c7e3372674d"><div class="ttname"><a href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a></div><div class="ttdeci">unsigned char end_flag</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00051">tetris.c:51</a></div></div>
+<div class="ttc" id="tetris_8c_html_a6cb39100e17c8153db7d9cfe5999ab17"><div class="ttname"><a href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a></div><div class="ttdeci">unsigned short tetriminos[7][4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00023">tetris.c:23</a></div></div>
+<div class="ttc" id="tetris_8c_html_a9d7f77334f11d266e824cb9b0ec6871e"><div class="ttname"><a href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a></div><div class="ttdeci">unsigned char shape</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00035">tetris.c:35</a></div></div>
+<div class="ttc" id="tetris_8c_html_a97513822cb79bcd590266957cd279292"><div class="ttname"><a href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a></div><div class="ttdeci">unsigned short temp_line[4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00039">tetris.c:39</a></div></div>
+<div class="ttc" id="tetris_8c_html_a8a99281c65483bd7516835711079ecf1"><div class="ttname"><a href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a></div><div class="ttdeci">unsigned char cur_col</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00038">tetris.c:38</a></div></div>
+<div class="ttc" id="tetris_8c_html_a5e25b037e0c4f44ea80058d66a7529e1"><div class="ttname"><a href="tetris_8c.html#a5e25b037e0c4f44ea80058d66a7529e1">Collision_flag</a></div><div class="ttdeci">unsigned char Collision_flag</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00045">tetris.c:45</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_acc53888f8fafb142cbb1a9fbe33bf957_cgraph.png" border="0" usemap="#tetris_8c_acc53888f8fafb142cbb1a9fbe33bf957_cgraph" alt=""/></div>
+<!-- MAP 10 -->
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_acc53888f8fafb142cbb1a9fbe33bf957_icgraph.png" border="0" usemap="#tetris_8c_acc53888f8fafb142cbb1a9fbe33bf957_icgraph" alt=""/></div>
+<!-- MAP 11 -->
+</div>
+
+</div>
+</div>
+<a id="a1fcb45e5d2428352eb36b487d1d4eea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fcb45e5d2428352eb36b487d1d4eea3">&#9670;&nbsp;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remove </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00188">188</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;   <span class="keywordtype">int</span> i, j = 0;</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;   <span class="keywordflow">for</span> (i = 0; i &lt; 16; i++)</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;   {</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[i] == 0x7FFE)</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      {</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;         <a class="code" href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">remove_count</a>++;</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;         <span class="keywordflow">for</span> (j = i; j &gt; 0; j--)</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;         {</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[j] = <a class="code" href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a>[j - 1];</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            </div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;         }</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      }</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;   }</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">remove_count</a> == 5){</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <a class="code" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a>++;</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <a class="code" href="tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f">speed</a>(<a class="code" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a>);</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <a class="code" href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">remove_count</a> = 0;}</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div><div class="ttc" id="tetris_8c_html_a0d957bf1afecc6bd1ebcb451c7abe11d"><div class="ttname"><a href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a></div><div class="ttdeci">unsigned char level</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00044">tetris.c:44</a></div></div>
+<div class="ttc" id="tetris_8c_html_ad12852dedfdcba50139ad6ddb53bf54f"><div class="ttname"><a href="tetris_8c.html#ad12852dedfdcba50139ad6ddb53bf54f">speed</a></div><div class="ttdeci">void speed(unsigned char level)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00209">tetris.c:209</a></div></div>
+<div class="ttc" id="tetris_8c_html_a30e19b77a300782bfc76ddcc416f926e"><div class="ttname"><a href="tetris_8c.html#a30e19b77a300782bfc76ddcc416f926e">remove_count</a></div><div class="ttdeci">unsigned char remove_count</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00050">tetris.c:50</a></div></div>
+<div class="ttc" id="tetris_8c_html_a20549a7bcd5a019416fd25a3c64fc977"><div class="ttname"><a href="tetris_8c.html#a20549a7bcd5a019416fd25a3c64fc977">game_board</a></div><div class="ttdeci">unsigned short game_board[17]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00040">tetris.c:40</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_a1fcb45e5d2428352eb36b487d1d4eea3_cgraph.png" border="0" usemap="#tetris_8c_a1fcb45e5d2428352eb36b487d1d4eea3_cgraph" alt=""/></div>
+<!-- MAP 12 -->
+</div>
+
+</div>
+</div>
+<a id="ad12852dedfdcba50139ad6ddb53bf54f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad12852dedfdcba50139ad6ddb53bf54f">&#9670;&nbsp;</a></span>speed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void speed </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00209">209</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;   <span class="keywordflow">switch</span> (<a class="code" href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a>)</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;   {</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;   <span class="keywordflow">case</span> 1:</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 250;</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;   <span class="keywordflow">case</span> 2:</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 200;</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;   <span class="keywordflow">case</span> 3:</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 150;</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;   <span class="keywordflow">case</span> 4:</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 100;</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;   <span class="keywordflow">case</span> 5:</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      <a class="code" href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a> = 50;</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;   <span class="keywordflow">case</span> 6:</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      <a class="code" href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a> = 1;</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;   }</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div><div class="ttc" id="tetris_8c_html_ac61a34f9c340a56962d27c7e3372674d"><div class="ttname"><a href="tetris_8c.html#ac61a34f9c340a56962d27c7e3372674d">end_flag</a></div><div class="ttdeci">unsigned char end_flag</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00051">tetris.c:51</a></div></div>
+<div class="ttc" id="tetris_8c_html_a0d957bf1afecc6bd1ebcb451c7abe11d"><div class="ttname"><a href="tetris_8c.html#a0d957bf1afecc6bd1ebcb451c7abe11d">level</a></div><div class="ttdeci">unsigned char level</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00044">tetris.c:44</a></div></div>
+<div class="ttc" id="tetris_8c_html_ab563c4c7faad8b2ba22fb0ded4d02ee1"><div class="ttname"><a href="tetris_8c.html#ab563c4c7faad8b2ba22fb0ded4d02ee1">delay</a></div><div class="ttdeci">unsigned char delay</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00049">tetris.c:49</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_ad12852dedfdcba50139ad6ddb53bf54f_icgraph.png" border="0" usemap="#tetris_8c_ad12852dedfdcba50139ad6ddb53bf54f_icgraph" alt=""/></div>
+<!-- MAP 13 -->
+</div>
+
+</div>
+</div>
+<a id="af87828117d0582d0031f563933f97bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af87828117d0582d0031f563933f97bfd">&#9670;&nbsp;</a></span>spin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00116">116</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;   <a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>++;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a> == 4)</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a> = 0;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;   <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a>() == -1)</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;   {</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>--;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[0] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0xF000) &gt;&gt; 12) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[1] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x0F00) &gt;&gt; 8) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[2] = ((<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x00F0) &gt;&gt; 4) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <a class="code" href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a>[3] = (<a class="code" href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a>[<a class="code" href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a>][<a class="code" href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a>] &amp; 0x000F) &lt;&lt; (<a class="code" href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a> - 3);</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;   }</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div><div class="ttc" id="tetris_8c_html_a6bf409bee6116cda44d0765f4b6e4ec2"><div class="ttname"><a href="tetris_8c.html#a6bf409bee6116cda44d0765f4b6e4ec2">pattern</a></div><div class="ttdeci">unsigned char pattern</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00036">tetris.c:36</a></div></div>
+<div class="ttc" id="tetris_8c_html_a71750e3c93ffff30f20f22f036e566ed"><div class="ttname"><a href="tetris_8c.html#a71750e3c93ffff30f20f22f036e566ed">Collision</a></div><div class="ttdeci">signed char Collision(void)</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00054">tetris.c:54</a></div></div>
+<div class="ttc" id="tetris_8c_html_a6cb39100e17c8153db7d9cfe5999ab17"><div class="ttname"><a href="tetris_8c.html#a6cb39100e17c8153db7d9cfe5999ab17">tetriminos</a></div><div class="ttdeci">unsigned short tetriminos[7][4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00023">tetris.c:23</a></div></div>
+<div class="ttc" id="tetris_8c_html_a9d7f77334f11d266e824cb9b0ec6871e"><div class="ttname"><a href="tetris_8c.html#a9d7f77334f11d266e824cb9b0ec6871e">shape</a></div><div class="ttdeci">unsigned char shape</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00035">tetris.c:35</a></div></div>
+<div class="ttc" id="tetris_8c_html_a97513822cb79bcd590266957cd279292"><div class="ttname"><a href="tetris_8c.html#a97513822cb79bcd590266957cd279292">temp_line</a></div><div class="ttdeci">unsigned short temp_line[4]</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00039">tetris.c:39</a></div></div>
+<div class="ttc" id="tetris_8c_html_a8a99281c65483bd7516835711079ecf1"><div class="ttname"><a href="tetris_8c.html#a8a99281c65483bd7516835711079ecf1">cur_col</a></div><div class="ttdeci">unsigned char cur_col</div><div class="ttdef"><b>Definition:</b> <a href="tetris_8c_source.html#l00038">tetris.c:38</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_af87828117d0582d0031f563933f97bfd_cgraph.png" border="0" usemap="#tetris_8c_af87828117d0582d0031f563933f97bfd_cgraph" alt=""/></div>
+<!-- MAP 14 -->
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="tetris_8c_af87828117d0582d0031f563933f97bfd_icgraph.png" border="0" usemap="#tetris_8c_af87828117d0582d0031f563933f97bfd_icgraph" alt=""/></div>
+<!-- MAP 15 -->
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">변수 문서화</h2>
+<a id="abca4bf3dca1f8f7a997b8c0ccacbb963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abca4bf3dca1f8f7a997b8c0ccacbb963">&#9670;&nbsp;</a></span>_timer_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char _timer_flag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00007">7</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a415a47d48605e8663920d695a9a4251a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a415a47d48605e8663920d695a9a4251a">&#9670;&nbsp;</a></span>adc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int adc[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00047">47</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5e25b037e0c4f44ea80058d66a7529e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e25b037e0c4f44ea80058d66a7529e1">&#9670;&nbsp;</a></span>Collision_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Collision_flag = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00045">45</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a62e5b0cab34a72f7aae4310d6000abed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e5b0cab34a72f7aae4310d6000abed">&#9670;&nbsp;</a></span>count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00008">8</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a8a99281c65483bd7516835711079ecf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a99281c65483bd7516835711079ecf1">&#9670;&nbsp;</a></span>cur_col</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char cur_col</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00038">38</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="abb21a2ebcb577edbad932a897afe40e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb21a2ebcb577edbad932a897afe40e0">&#9670;&nbsp;</a></span>cur_line</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char cur_line</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00037">37</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ab563c4c7faad8b2ba22fb0ded4d02ee1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab563c4c7faad8b2ba22fb0ded4d02ee1">&#9670;&nbsp;</a></span>delay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char delay = 250</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00049">49</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a62237d5bb1265d8dd6194b6d482c7dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62237d5bb1265d8dd6194b6d482c7dcf">&#9670;&nbsp;</a></span>dP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="dot__matrix_8h.html#a3d87b5fb5361b7577cb82734a97db15f">dot_matrix</a>* dP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00009">9</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac61a34f9c340a56962d27c7e3372674d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac61a34f9c340a56962d27c7e3372674d">&#9670;&nbsp;</a></span>end_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char end_flag = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00051">51</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a20549a7bcd5a019416fd25a3c64fc977"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20549a7bcd5a019416fd25a3c64fc977">&#9670;&nbsp;</a></span>game_board</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short game_board[17]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00040">40</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ad20ce888354be47960f1fbe60be9b197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20ce888354be47960f1fbe60be9b197">&#9670;&nbsp;</a></span>green</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char green[16]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00042">42</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a0d957bf1afecc6bd1ebcb451c7abe11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d957bf1afecc6bd1ebcb451c7abe11d">&#9670;&nbsp;</a></span>level</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char level = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00044">44</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a08c72d06034953df162b5cc6dd0e0360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08c72d06034953df162b5cc6dd0e0360">&#9670;&nbsp;</a></span>mux</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char mux = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00048">48</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac782b56188a1f8e4e0ae82fc32ad05ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac782b56188a1f8e4e0ae82fc32ad05ec">&#9670;&nbsp;</a></span>pad_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char pad_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00008">8</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a6bf409bee6116cda44d0765f4b6e4ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf409bee6116cda44d0765f4b6e4ec2">&#9670;&nbsp;</a></span>pattern</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char pattern</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00036">36</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a44d0e445041ca51a492e04db487a33eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44d0e445041ca51a492e04db487a33eb">&#9670;&nbsp;</a></span>red</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char red[16]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00041">41</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a30e19b77a300782bfc76ddcc416f926e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e19b77a300782bfc76ddcc416f926e">&#9670;&nbsp;</a></span>remove_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char remove_count = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00050">50</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a9d7f77334f11d266e824cb9b0ec6871e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d7f77334f11d266e824cb9b0ec6871e">&#9670;&nbsp;</a></span>shape</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char shape</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00035">35</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a97513822cb79bcd590266957cd279292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97513822cb79bcd590266957cd279292">&#9670;&nbsp;</a></span>temp_line</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short temp_line[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00039">39</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a6cb39100e17c8153db7d9cfe5999ab17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cb39100e17c8153db7d9cfe5999ab17">&#9670;&nbsp;</a></span>tetriminos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short tetriminos[7][4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>초기값:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line">   { 0x6600, 0x6600, 0x6600, 0x6600 },    </div><div class="line">   { 0xF000, 0x4444, 0xF000, 0x4444 },    </div><div class="line">   { 0x6C00, 0x8C40, 0x6C00, 0x8C40 },    </div><div class="line">   { 0xC600, 0x4C80, 0xC600, 0x4C80 },    </div><div class="line">   { 0xE400, 0x8C80, 0x4E00, 0x4C40 },    </div><div class="line">   { 0x2E00, 0xC440, 0xE800, 0x88C0 },    </div><div class="line">   { 0x8E00, 0x44C0, 0xE200, 0xC880 },    </div><div class="line"></div><div class="line">}</div></div><!-- fragment -->
+<p class="definition"><a class="el" href="tetris_8c_source.html">tetris.c</a> 파일의 <a class="el" href="tetris_8c_source.html#l00023">23</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="tetris_8c.html">tetris.c</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>
